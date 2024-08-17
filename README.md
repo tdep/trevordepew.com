@@ -32,3 +32,7 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## License
+The content of this project itself is `Copyright (c) 2024 Trevor DePew All Rights Reserved`, and the underlying source code used to format and display
+that content is licensed under the [`MIT license`](https://github.com/tdep/trevordepew.com/blob/main/LICENSE).
