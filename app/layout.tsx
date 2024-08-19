@@ -1,5 +1,5 @@
 import '@/app/ui/global.css';
-import { inter } from "@/app/ui/fonts";
+import { sansita } from "@/app/ui/fonts";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${sansita.className} antialiased`}>{children}</body>
     </html>
   );
 }

@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google';
 import { Plaster } from 'next/font/google'
 import { Sansita } from 'next/font/google'
+import { Orbitron } from 'next/font/google'
 
 export const inter = Inter({subsets: ['latin']});
 export const plaster = Plaster({
@@ -9,5 +10,9 @@ export const plaster = Plaster({
 });
 export const sansita = Sansita({
     weight: "400",
-    subsets:['latin'],
+    subsets: ['latin'],
+});
+export const orbitron = Orbitron({
+    weight: "800",
+    subsets: ['latin']
 });
