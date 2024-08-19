@@ -1,4 +1,5 @@
 import { plaster } from "@/app/ui/fonts";
+import TADIcon from '@/app/lib/TADIcon'
 import Image from 'next/image';
 
 export default function TadLogo() {
@@ -6,12 +7,7 @@ export default function TadLogo() {
         <div
             className={`${plaster.className} flex flex-row items-center leading-none text-white-100`}
         >
-            <Image
-                src={"/tad-inline.svg"}
-                height={"200"}
-                width={"200"}
-                alt={"Website Logo Icon"}
-            ></Image>
+            <TADIcon />
             <p className={"text-[144px]"}>Trevor DePew</p>
         </div>
     );

@@ -50,7 +50,14 @@ export default function Page() {
                   height={heroImage.height}
                   className={"hidden md:block"}
                   alt={heroImage.alt}
-              ></Image>
+              />
+              <Image
+                  src={heroImage.src}
+                  width={heroImage.width}
+                  height={heroImage.height}
+                  className={"block md:hidden"}
+                  alt={heroImage.alt}
+              />
           </div>
         </div>
       </main>
