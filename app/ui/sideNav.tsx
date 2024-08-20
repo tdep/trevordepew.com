@@ -12,7 +12,7 @@ export default function SideNav() {
                 href={"/"}
             >
                 <div className={"w-32 text-white-100 md:w-40"}>
-                    <TadLogo />
+                    <TadLogo text={"24"} width={76} height={24}/>
                 </div>
             </Link>
             <div className={"flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2"}>

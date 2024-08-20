@@ -11,7 +11,7 @@ export default function Page() {
   return (
       <main className={"flex min-h-screen flex-col p-6"}>
         <div className={"flex h-20 shrink-0 items-end rounded-lg bg-belize-500 p-4 md:h-52"}>
-          <TadLogo />
+          <TadLogo text={"144"} width={200} height={200}/>
         </div>
         <div className={"mt-4 flex grow flex-col gap-4 md:flex-row"}>
           <div className={"flex flex-col justify-center gap-6 rounded-lg bg-gray-100 px-6 py-10 md:w-2/5 md:px-20"}>
