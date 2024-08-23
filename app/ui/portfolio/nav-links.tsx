@@ -28,11 +28,11 @@ export default function NavLinks() {
                         key={link.name}
                         href={link.href}
                         className={clsx(
-                            "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-400 p-3 text-xl font-medium hover:bg-amethyst-500 hover:text-white-100 md:flex-none md:justify-start md:p-2 md:px-3",
+                            "flex h-[48px] grow items-center justify-center gap-2 text-white-100 rounded-md bg-gray-400 p-3 text-xl font-medium hover:bg-amethyst-500 hover:text-white-100 md:flex-none md:justify-start md:p-2 md:px-3",
                             {
-                                'bg-belize-500 text-white-100': link.name === 'Composition Portfolio',
-                                'bg-seagreen-500 text-white-100': link.name === 'Craft Portfolio',
-                                'bg-amethyst-500 text-white-100': pathname === link.href,
+                                'bg-belize-500': link.name === 'Composition Portfolio',
+                                'bg-seagreen-500': link.name === 'Craft Portfolio',
+                                'bg-amethyst-500': pathname === link.href,
                             },
                         )}
                     >

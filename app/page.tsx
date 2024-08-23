@@ -20,9 +20,9 @@ export default function Page() {
               </p>
               <ol>
                   <Link
-                      // href={"/software-portfolio"}
-                      href={"https://www.trevordepew.com/portfolio"}
-                      target={"_blank"}
+                      href={"/software-portfolio"}
+                      // href={"https://www.trevordepew.com/portfolio"}
+                      // target={"_blank"}
                       className={"mt-1 mb-1 flex items-center gap-5 self-start rounded-lg bg-amethyst-500 px-6 py-3 text-xl font-medium text-white-100"}>
                       <span className={`${orbitron.className}`}>Software Engineering Portfolio</span> <ArrowRightIcon className={"w-5 md:w-6"} />
                   </Link>
