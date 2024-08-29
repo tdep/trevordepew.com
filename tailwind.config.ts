@@ -13,6 +13,10 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      boxShadow: {
+        "section-2d": "12px 12px 0 0 rgba(0, 0, 0, 1)",
+        "section-2d-skeleton": "12px 12px 0 0 rgba(236, 246, 247, 1)"
+      },
     },
     colors: {
       transparent: 'transparent',
