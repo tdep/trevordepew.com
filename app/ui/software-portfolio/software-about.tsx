@@ -16,8 +16,8 @@ export default function SoftwareAbout() {
                     alt={"Portrait of Trevor DePew, Software Engineer"}
                 />
             </div>
-            <div className={"flex flex-row w-full h-auto items-start mt-4 mb-4"}>
-                <div className={""}>
+            <div className={"flex flex-col w-full h-auto items-start mt-4 mb-4"}>
+                <div>
                     <Image
                         src={"/profile_trevor.png"}
                         width={250}
@@ -40,6 +40,22 @@ export default function SoftwareAbout() {
                         have in turn given me a well-rounded set of skills that I use to broaden my perspective as a
                         software engineer.
                     </p>
+                </div>
+            </div>
+            <div className={"hidden md:grid grid-cols-2 justify-items-center"}>
+                <div className={""}>
+                    <p>Education</p>
+                    <div className={"grid grid-cols-2"}>
+                        <ul>
+                            <li><p>CUNY Brooklyn College: M.S. Computer Science</p></li>
+                        </ul>
+                        <ul>
+                            <li><p>May 2026</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className={"basis-1/2"}>
+                    <p>Tech Skills</p>
                 </div>
             </div>
         </div>
