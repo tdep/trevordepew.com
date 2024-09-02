@@ -28,7 +28,7 @@ export default function SWPortfolioSection({
                         <div className={"h-6 w-6 rounded-full bg-white-100 ml-1 border-4 border-black"} />
                     </div>
                 </div>
-                <div className={"mt-0 h-[80vh] bg-white-100"}>
+                <div className={"mt-0 h-[80vh] bg-white-100 overflow-y-scroll"}>
                     <SectionContent.type />
                 </div>
             </div>
