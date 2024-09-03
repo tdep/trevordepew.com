@@ -5,6 +5,7 @@ type SectionProps = {
     SectionContent: React.ReactElement;
 }
 
+// TODO: fix display for larger screens (more compact)
 export default function SWPortfolioSection({
                                                sectionName,
                                                SectionContent,
@@ -14,7 +15,7 @@ export default function SWPortfolioSection({
             <div className={"bg-gray-300 border-4 border-black"}>
                 <div
                     className={clsx(
-                        "mt-0 grid h-[80px] grid-cols-3 justify-items-end gap-2 border-b-4 border-black p-2",
+                        "mt-0 grid h-[70px] grid-cols-3 justify-items-end gap-2 border-b-4 border-black p-2",
                         {
                             'bg-pomegranate-500': sectionName === 'about',
                             'bg-carrot-500': sectionName === 'experience',
@@ -28,7 +29,7 @@ export default function SWPortfolioSection({
                         <div className={"h-6 w-6 rounded-full bg-white-100 ml-1 border-4 border-black"} />
                     </div>
                 </div>
-                <div className={"mt-0 h-[80vh] bg-white-100 overflow-y-scroll"}>
+                <div className={"mt-0 h-[89vh] bg-white-100 overflow-y-scroll md:overflow-hidden"}>
                     <SectionContent.type />
                 </div>
             </div>
