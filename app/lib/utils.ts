@@ -7,7 +7,7 @@ const heroImages: HeroImage[] = [
     {id: "4", name: "avatar 4", src: "/robo_avatar4.png", width: 303, height: 364, alt: "Robot Avatar 4"},
     {id: "5", name: "avatar 5", src: "/robo_avatar5.png", width: 320, height: 406, alt: "Robot Avatar 5"},
     {id: "6", name: "avatar 6", src: "/robo_avatar6.png", width: 328, height: 376, alt: "Robot Avatar 6"},
-]
+];
 
 export const heroImagePicker = () => {
     const randInt = Math.ceil(Math.random() * 10)

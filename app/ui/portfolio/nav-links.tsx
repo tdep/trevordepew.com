@@ -11,12 +11,14 @@ import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import TADIcon from "@/app/lib/TADIcon";
 
+// TODO: Refactor Software Portfolio pathname to 'software-portfolio' (after current round of applications)
+
 // A Map of Links to display in the side navigation.
 const links = [
     { name: 'Home', href: '/', icon: HomeIcon },
     { name: 'Composition Portfolio', href: '/composition-portfolio', icon: MusicalNoteIcon },
     { name: 'Craft Portfolio', href: '/craft-portfolio', icon: PaintBrushIcon },
-    { name: 'Software Portfolio', href: '/software-portfolio', icon: CodeBracketIcon}
+    { name: 'Software Portfolio', href: '/portfolio', icon: CodeBracketIcon}
 ];
 
 export default function NavLinks() {
@@ -36,7 +38,7 @@ export default function NavLinks() {
                                     // dynamic background colors for side-nav links
                                     'bg-belize-500': pathname === '/composition-portfolio',
                                     'bg-seagreen-500': pathname === '/craft-portfolio',
-                                    'bg-amethyst-500': pathname === '/software-portfolio',
+                                    'bg-amethyst-500': pathname === '/portfolio',
                                 },
                             )}
                         >
@@ -63,7 +65,7 @@ export function HomeLogoNav() {
                         // dynamic background colors for side-nav home/logo link
                         'bg-belize-500': pathname === '/composition-portfolio',
                         'bg-seagreen-500': pathname === '/craft-portfolio',
-                        'bg-amethyst-500': pathname === '/software-portfolio',
+                        'bg-amethyst-500': pathname === '/portfolio',
                     },
                 )}
             >

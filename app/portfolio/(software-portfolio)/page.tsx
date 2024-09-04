@@ -9,6 +9,7 @@ import SoftwareContact from "@/app/ui/software-portfolio/software-contact"
 import SoftwareFooter from "@/app/ui/software-portfolio/software-footer"
 
 export default function Page() {
+    // TODO: Refactor route to be 'software-portfolio' (after current round of applications)
     return (
         <main className={"md:mr-5"}>
             <h1 className={`${orbitron.className} mb-4 text-center text-2xl md:text-4xl md:text-start`}>
