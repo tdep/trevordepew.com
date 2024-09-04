@@ -10,7 +10,7 @@ import SoftwareFooter from "@/app/ui/software-portfolio/software-footer"
 
 export default function Page() {
     return (
-        <main>
+        <main className={"md:mr-5"}>
             <h1 className={`${orbitron.className} mb-4 text-center text-2xl md:text-4xl md:text-start`}>
                 Engineering Portfolio
             </h1>

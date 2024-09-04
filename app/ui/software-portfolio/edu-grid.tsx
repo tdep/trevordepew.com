@@ -1,4 +1,5 @@
 import clsx from "clsx"
+import { inter } from "@/app/ui/fonts"
 
 type EduData = {
     school: string,
@@ -34,31 +35,55 @@ const eduDataList: EduData[] = [
     },
 ];
 
-// TODO: fix display for smaller screens
 export default function EduGrid() {
     return (
-        <div className={"flex flex-col text-center"}>
-            <p>Education</p>
-            <table className={"border-collapse w-full border-2 border-black shadow-section-2d-small"}>
-                <tbody>
+        <>
+            {/* Mobile */}
+            <div className={"flex lg:hidden m-1"}>
+                <div>
                     {eduDataList.map((edu, i) => {
                         return (
-                            <tr
+                            <div
                                 key={i}
-                                className={clsx('table-row text-sm text-justify',
+                                className={clsx(
+                                    `${inter.className} grid grid-cols-2 items-center text-sm`,
                                     {
-                                        'border-t border-gray-700': i !== 0,
+                                        'border-t-2 border-t-gray-700': i !== 0
                                     }
                                 )}
                             >
-                                <td className={"p-0 pl-1"}>{edu.school}</td>
-                                <td className={"p-0 pl-1"}>{edu.degree}</td>
-                                <td className={"p-0 pl-1"}>{edu.completion}</td>
-                            </tr>
+                                <p>{edu.school}:</p>
+                                <p>{edu.degree}</p>
+                            </div>
                         )
                     })}
-                </tbody>
-            </table>
-        </div>
+                </div>
+            </div>
+            {/* Desktop */}
+            <div className={"hidden lg:flex flex-col text-center"}>
+                <p className={"md:text-2xl"}>Education</p>
+                <table className={"border-collapse w-full border-2 border-black shadow-section-2d-small"}>
+                    <tbody>
+                        {eduDataList.map((edu, i) => {
+                            return (
+                                <tr
+                                    key={i}
+                                    className={clsx(
+                                        'table-row text-sm text-justify md:text-lg',
+                                        {
+                                            'border-t border-gray-700': i !== 0,
+                                        }
+                                    )}
+                                >
+                                    <td className={"p-0 pl-1"}>{edu.school}</td>
+                                    <td className={"p-0 pl-1"}>{edu.degree}</td>
+                                    <td className={"p-0 pl-1"}>{edu.completion}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+            </div>
+        </>
     )
 }
