@@ -55,7 +55,7 @@ export default function EduGrid() {
                                 <p>{edu.school}:</p>
                                 <p>{edu.degree}</p>
                             </div>
-                        )
+                        );
                     })}
                 </div>
             </div>
@@ -79,11 +79,11 @@ export default function EduGrid() {
                                     <td className={"p-0 pl-1"}>{edu.degree}</td>
                                     <td className={"p-0 pl-1"}>{edu.completion}</td>
                                 </tr>
-                            )
+                            );
                         })}
                     </tbody>
                 </table>
             </div>
         </>
-    )
+    );
 }

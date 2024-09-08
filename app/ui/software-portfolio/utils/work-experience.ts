@@ -97,7 +97,7 @@ export const workExperience: ExperienceData[] = [
         role: "Student",
         description: [],
         date: "2022-2023",
-        skills: []
+        skills: ["Web Design", "CSS", "HTML", "JavaScript", "OOP", "Frontend Web Development", "Backend Web Development", "Ruby on Rails", "Python", "React.js", "Flask"]
     },
     {
         id: 9,
@@ -110,7 +110,7 @@ export const workExperience: ExperienceData[] = [
             "Designed and refined new Next.JS Backend For Frontend(BFF) services, optimizing request processing and incorporating pagination, which boosted frontend client performance and reduced response times by 50-60%."
         ],
         date: "2023-2024",
-        skills: []
+        skills: ["Java", "Maven", "Unit Testing", "OOP", "GKE", "Protcol Buffers", "Backend Web Development", "Frontend Web Development", "Docker", "gRPC", "Integration Testing", "REST APIs", "Pair Programming", "TypeScript", "Next.js"]
     },
     {
         id: 10,
@@ -122,7 +122,7 @@ export const workExperience: ExperienceData[] = [
             "Investigated and compiled essential features and user stories, creating a well-documented database schema; enabled a 25% increase in project delivery speed by fostering better team collaboration and Agile practices."
         ],
         date: "May-June 2024",
-        skills: []
+        skills: ["Python", "Django", "Django REST Framework", "SQLite", "JWT"]
     },
     {
         id: 11,
@@ -133,6 +133,6 @@ export const workExperience: ExperienceData[] = [
             "Incorporated stakeholder goals in project planning to design a user interface with a focus on delivering positive experience and capturing sales."
         ],
         date: "June 2024 - present",
-        skills: []
+        skills: ["UX", "Design", "Project Planning", "Wireframe", "SEO"]
     },
 ];

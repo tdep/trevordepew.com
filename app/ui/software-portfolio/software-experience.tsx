@@ -1,16 +1,30 @@
+import SkillFilter from "@/app/ui/software-portfolio/utils/skill-filter"
+
 export default function SoftwareExperience() {
     return (
-        <div className={"bg-white-100 m-4 mt-2 lg:m-8"}>
-            <div className={"flex flex-col items-start w-full leading-none text-center"}>
+        <div className={"leading-none h-full bg-white-100 m-4 mt-2 lg:m-8"}>
+            <div className={"flex flex-col items-start w-full text-center"}>
                 <p className={"text-5xl mb-2"}>Work Experience</p>
-                <p className={"w-1/2 text-lg text-justify mb-1 mt-2 lg:text-xl"}>
+                <p className={"w-full text-lg text-justify mb-1 mt-2 lg:text-xl"}>
                     I&apos;m lucky to have had a variety of work experiences over the years in all sorts of disciplines.
-                    Many have aligned with passions but a few have been particularly poignant. I&apos;ve listed those below.
+                    Many have aligned with passions but a few have been particularly poignant. I&apos;ve listed those
+                    here.
                 </p>
             </div>
-            <div>
-                
+            <div className={"h-full border-2 mt-4 border-black"}>
+                <div className={"w-full text-center"}>
+                    <p>List all the unique skills as clickable filters to filter the experience list</p>
+                </div>
+                <div className={"grid grid-cols-2"}>
+                    <div className={""}>
+                        <p>Experience List</p>
+                        <SkillFilter />
+                    </div>
+                    <div className={""}>
+                        <p>Descriptions</p>
+                    </div>
+                </div>
             </div>
         </div>
-    )
+    );
 }

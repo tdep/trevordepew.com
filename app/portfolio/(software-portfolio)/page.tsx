@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { orbitron } from "@/app/ui/fonts"
-import { AboutSkeleton } from "@/app/ui/skeletons"
+import { AboutSkeleton, ExperienceSkeleton } from "@/app/ui/skeletons"
 import SWPortfolioSection from "@/app/ui/software-portfolio/software-section"
 import SoftwareAbout from "@/app/ui/software-portfolio/software-about"
 import SoftwareExperience from "@/app/ui/software-portfolio/software-experience"
@@ -21,7 +21,7 @@ export default function Page() {
                 </Suspense>
             </div>
             <div className={"mb-20"}>
-                <Suspense fallback={<AboutSkeleton />}>
+                <Suspense fallback={<ExperienceSkeleton />}>
                     <SWPortfolioSection sectionName={"experience"} SectionContent={<SoftwareExperience />}/>
                 </Suspense>
             </div>
