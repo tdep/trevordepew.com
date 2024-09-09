@@ -1,11 +1,12 @@
-type ExperienceData = {
+export type ExperienceData = {
     id: number
     name: string;
     role: string;
     description: string[];
     date: string;
     skills: string[];
-}
+};
+
 export const workExperience: ExperienceData[] = [
     {
         id: 1,
@@ -17,7 +18,7 @@ export const workExperience: ExperienceData[] = [
             "Carried out a multitude of regular farm tasks such as planting, pruning,harvesting, weed control, fertilizing, and irrigation building while making sure to use the latest and most effective processes yielding the best crops."
         ],
         date: "2004-2013",
-        skills: [],
+        skills: ["test-1"],
     },
     {
         id: 2,
@@ -29,7 +30,7 @@ export const workExperience: ExperienceData[] = [
             "Photographed concert events to create an archive of performances for future advertisements and for performers to have a record of events they participated in."
         ],
         date: "2004-2013",
-        skills: [],
+        skills: ["test-1", "test-2"],
     },
     {
         id: 3,
@@ -39,7 +40,7 @@ export const workExperience: ExperienceData[] = [
             "Created and taught lessons in music theory, violin, and mandolin to amateurs and intermediate players from age 5 to 65 both individually and in groups."
         ],
         date: "2006-2013",
-        skills: [],
+        skills: ["test-1", "test-2", "test-3"],
     },
     {
         id: 4,
@@ -53,7 +54,7 @@ export const workExperience: ExperienceData[] = [
             "Updated customer memberships and shipping information in store computer system to reduce mistakes in custom orders and maintain customer profiles."
         ],
         date: "2013-2014",
-        skills: []
+        skills: ["test-1", "test-3"]
     },
     {
         id: 5,
@@ -65,7 +66,7 @@ export const workExperience: ExperienceData[] = [
             "Outlined a budget and plan-of-action for future repairs and organization of school-owned string instruments with plans to incorporate workshops on instrument care for students."
         ],
         date: "2016-2017",
-        skills: []
+        skills: ["test-2", "test-3"]
     },
     {
         id: 6,
@@ -78,7 +79,7 @@ export const workExperience: ExperienceData[] = [
             "Initiated and performed repairs of MIDI instruments in New York reducing the turnaround for faulty products within the US and Canada from 8 weeks to 2 weeks."
         ],
         date: "2017-2018",
-        skills: []
+        skills: ["test-3"]
     },
     {
         id: 7,

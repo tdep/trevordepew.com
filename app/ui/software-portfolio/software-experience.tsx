@@ -12,13 +12,14 @@ export default function SoftwareExperience() {
                 </p>
             </div>
             <div className={"h-full border-2 mt-4 border-black"}>
-                <div className={"w-full text-center"}>
-                    <p>List all the unique skills as clickable filters to filter the experience list</p>
+                <div className={"w-full flex justify-center m-1"}>
+                    <div className={""}>
+                        <SkillFilter />
+                    </div>
                 </div>
                 <div className={"grid grid-cols-2"}>
                     <div className={""}>
                         <p>Experience List</p>
-                        <SkillFilter />
                     </div>
                     <div className={""}>
                         <p>Descriptions</p>
