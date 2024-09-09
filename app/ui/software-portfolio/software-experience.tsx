@@ -1,6 +1,12 @@
+'use client';
+
 import SkillFilter from "@/app/ui/software-portfolio/utils/skill-filter"
+import { useState } from "react"
+import { SkillCategory } from "@/app/ui/software-portfolio/utils/work-experience"
 
 export default function SoftwareExperience() {
+    const [filter, setFilter] = useState<SkillCategory>(6);
+
     return (
         <div className={"leading-none h-full bg-white-100 m-4 mt-2 lg:m-8"}>
             <div className={"flex flex-col items-start w-full text-center"}>
@@ -14,7 +20,10 @@ export default function SoftwareExperience() {
             <div className={"h-full border-2 mt-4 border-black"}>
                 <div className={"w-full flex justify-center m-1"}>
                     <div className={""}>
-                        <SkillFilter />
+                        <SkillFilter
+                            filter={filter}
+                            onSelect={filter => setFilter(filter)}
+                        />
                     </div>
                 </div>
                 <div className={"grid grid-cols-2"}>

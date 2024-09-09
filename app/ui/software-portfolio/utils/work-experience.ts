@@ -1,3 +1,39 @@
+// export type SkillExperiences = {
+//     skill: string;
+//     category: SkillCategory;
+//     experiences: string[];
+// };
+
+// export const Experience = {
+//     0: "BERRY_FARM",
+//     1: "MUSICA",
+//     2: "VIOLIN_TEACHER",
+//     3: "BARNES_AND_NOBLE",
+//     4: "STUYVESANT",
+//     5: "ROLI",
+//     6: "AROLLA",
+//     7: "FLATIRON",
+//     8: "SPOTIFY",
+//     9: "SONGSHARE",
+//     10: "LTM"
+// }
+
+export enum SkillCategory {
+    LANGUAGE,
+    FRAMEWORK,
+    SOFT,
+    METHOD,
+    CONCEPT,
+    TESTING,
+    CLEAR
+}
+
+export type Skill = {
+    name: string;
+    category: SkillCategory;
+    experienceID: number[];
+}
+
 export type ExperienceData = {
     id: number
     name: string;
@@ -7,9 +43,42 @@ export type ExperienceData = {
     skills: string[];
 };
 
+export const skillsList: Skill[] = [
+    {
+        name: "Test-1",
+        category: SkillCategory.TESTING,
+        experienceID: [0, 1, 2, 3]
+    },
+    {
+        name: "Test-2",
+        category: SkillCategory.TESTING,
+        experienceID: [1, 2, 4]
+    },
+    {
+        name: "Test-3",
+        category: SkillCategory.LANGUAGE,
+        experienceID: [2, 3, 4, 5]
+    },
+    {
+        name: "Test-4",
+        category: SkillCategory.FRAMEWORK,
+        experienceID: [5, 6, 7, 8]
+    },
+    {
+        name: "Test-5",
+        category: SkillCategory.SOFT,
+        experienceID: [5]
+    },
+    {
+        name: "Test-6",
+        category: SkillCategory.SOFT,
+        experienceID: [7, 8]
+    },
+]
+
 export const workExperience: ExperienceData[] = [
     {
-        id: 1,
+        id: 0,
         name: "The Berry Farm",
         role: "Farm Hand",
         description: [
@@ -18,10 +87,10 @@ export const workExperience: ExperienceData[] = [
             "Carried out a multitude of regular farm tasks such as planting, pruning,harvesting, weed control, fertilizing, and irrigation building while making sure to use the latest and most effective processes yielding the best crops."
         ],
         date: "2004-2013",
-        skills: ["test-1"],
+        skills: ["Test-1"],
     },
     {
-        id: 2,
+        id: 1,
         name: "Musica",
         role: "Administrative Assistant",
         description: [
@@ -29,11 +98,11 @@ export const workExperience: ExperienceData[] = [
             "Assisted in setup and running of lights and sound for music performances to ensure smooth operations and ideal conditions for performers and audience members.",
             "Photographed concert events to create an archive of performances for future advertisements and for performers to have a record of events they participated in."
         ],
-        date: "2004-2013",
+        date: "2006-2013",
         skills: ["test-1", "test-2"],
     },
     {
-        id: 3,
+        id: 2,
         name: "Self Employed",
         role: "Violin Instructor / Music Teacher",
         description: [
@@ -43,7 +112,7 @@ export const workExperience: ExperienceData[] = [
         skills: ["test-1", "test-2", "test-3"],
     },
     {
-        id: 4,
+        id: 3,
         name: "Barnes & Noble",
         role: "Bookseller",
         description: [
@@ -57,7 +126,7 @@ export const workExperience: ExperienceData[] = [
         skills: ["test-1", "test-3"]
     },
     {
-        id: 5,
+        id: 4,
         name: "Stuyvesant High School",
         role: "Theater Technician / Instrument Repair",
         description: [
@@ -69,7 +138,7 @@ export const workExperience: ExperienceData[] = [
         skills: ["test-2", "test-3"]
     },
     {
-        id: 6,
+        id: 5,
         name: "Roli",
         role: "Creator Support Agent / Repair Technician",
         description: [
@@ -82,7 +151,7 @@ export const workExperience: ExperienceData[] = [
         skills: ["test-3"]
     },
     {
-        id: 7,
+        id: 6,
         name: "Arolla Piano Co.",
         role: "Piano Technician",
         description: [
@@ -93,7 +162,7 @@ export const workExperience: ExperienceData[] = [
         skills: []
     },
     {
-        id: 8,
+        id: 7,
         name: "Flatiron School",
         role: "Student",
         description: [],
@@ -101,7 +170,7 @@ export const workExperience: ExperienceData[] = [
         skills: ["Web Design", "CSS", "HTML", "JavaScript", "OOP", "Frontend Web Development", "Backend Web Development", "Ruby on Rails", "Python", "React.js", "Flask"]
     },
     {
-        id: 9,
+        id: 8,
         name: "Spotify",
         role: "Java Backend Engineer",
         description: [
@@ -114,7 +183,7 @@ export const workExperience: ExperienceData[] = [
         skills: ["Java", "Maven", "Unit Testing", "OOP", "GKE", "Protcol Buffers", "Backend Web Development", "Frontend Web Development", "Docker", "gRPC", "Integration Testing", "REST APIs", "Pair Programming", "TypeScript", "Next.js"]
     },
     {
-        id: 10,
+        id: 9,
         name: "SongShare",
         role: "Backend Engineer",
         description: [
@@ -126,7 +195,7 @@ export const workExperience: ExperienceData[] = [
         skills: ["Python", "Django", "Django REST Framework", "SQLite", "JWT"]
     },
     {
-        id: 11,
+        id: 10,
         name: "Lifting The Mood",
         role: "Software Engineer",
         description: [
