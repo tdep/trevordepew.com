@@ -1,11 +1,16 @@
 'use client';
 
 import SkillFilter from "@/app/ui/software-portfolio/utils/skill-filter"
-import { useState } from "react"
-import { SkillCategory } from "@/app/ui/software-portfolio/utils/work-experience"
+import { Dispatch, SetStateAction, useState } from "react"
+import ExperienceList from "@/app/ui/software-portfolio/utils/experience-list"
+
+export type FilterProps = {
+    filter: number[],
+    onSelect: Dispatch<SetStateAction<number[]>>
+}
 
 export default function SoftwareExperience() {
-    const [filter, setFilter] = useState<SkillCategory>(6);
+    const [filter, setFilter] = useState<number[]>([0,1,2,3,4,5,6,7,8,9,10]); //TODO: change to grab list of exp. ids instead of hardcoding
 
     return (
         <div className={"leading-none h-full bg-white-100 m-4 mt-2 lg:m-8"}>
@@ -28,7 +33,10 @@ export default function SoftwareExperience() {
                 </div>
                 <div className={"grid grid-cols-2"}>
                     <div className={""}>
-                        <p>Experience List</p>
+                        <ExperienceList
+                            filter={filter}
+                            onSelect={filter => setFilter(filter)}
+                        />
                     </div>
                     <div className={""}>
                         <p>Descriptions</p>

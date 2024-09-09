@@ -1,21 +1,18 @@
 import { SkillCategory, skillsList } from "@/app/ui/software-portfolio/utils/work-experience"
-import { SetStateAction, Dispatch } from "react"
+import { FilterProps } from "@/app/ui/software-portfolio/software-experience"
 import { inter } from "@/app/ui/fonts"
 import clsx from "clsx"
 
-type FilterProps = {
-    filter: SkillCategory,
-    onSelect: Dispatch<SetStateAction<SkillCategory>>
-}
+
 
 export default function SkillFilter({ filter, onSelect }: FilterProps) {
-
+    //TODO: set visual feedback for button clicks
     return(
         <div className={"grid grid-cols-12 gap-1 justify-items-center"}>
             <div className={"w-20 overflow-hidden text-nowrap"}>
                 <p
-                    className={"text-sm text-center border-2 border-black rounded-lg p-1 bg-gray-600 hover:bg-gray-800"}
-                    onClick={() => {onSelect(6)}}
+                    className={"text-sm text-center border-2 border-black rounded-lg p-1 bg-gray-600 hover:bg-gray-800 hover:cursor-pointer"}
+                    onClick={() => {onSelect([0,1,2,3,4,5,6,7,8,9,10])}} //TODO: see software-experience
                 >
                     Clear Filter
                 </p>
@@ -25,14 +22,7 @@ export default function SkillFilter({ filter, onSelect }: FilterProps) {
                 return(
                     <div
                         key={skill.name}
-                        className={clsx(
-                            'w-20 overflow-hidden text-nowrap',
-                            {
-                                'border-2 border-emerald-200': filter === 6,
-                                'border-2 border-black': filter === 0,
-                                'border-2 border-blue-500': filter === 5
-                            }
-                        )}
+                        className={'w-20 overflow-hidden text-nowrap'}
                     >
                         <p className={clsx(
                             `${inter.className} text-[12px] text-center border-2 border-black rounded-lg p-1 hover:bg-white-100 hover:text-black hover:cursor-pointer`,
@@ -43,7 +33,7 @@ export default function SkillFilter({ filter, onSelect }: FilterProps) {
                                 'bg-carrot-300': skill.category === SkillCategory.FRAMEWORK
                             }
                         )}
-                           onClick={() => {onSelect(skill.category)}}
+                           onClick={() => {onSelect(skill.experienceIDs)}}
                         >{skill.name}</p>
                     </div>
                 );

@@ -31,7 +31,7 @@ export enum SkillCategory {
 export type Skill = {
     name: string;
     category: SkillCategory;
-    experienceID: number[];
+    experienceIDs: number[];
 }
 
 export type ExperienceData = {
@@ -47,32 +47,32 @@ export const skillsList: Skill[] = [
     {
         name: "Test-1",
         category: SkillCategory.TESTING,
-        experienceID: [0, 1, 2, 3]
+        experienceIDs: [0, 1, 2, 3]
     },
     {
         name: "Test-2",
         category: SkillCategory.TESTING,
-        experienceID: [1, 2, 4]
+        experienceIDs: [1, 2, 4]
     },
     {
         name: "Test-3",
         category: SkillCategory.LANGUAGE,
-        experienceID: [2, 3, 4, 5]
+        experienceIDs: [2, 3, 4, 5]
     },
     {
         name: "Test-4",
         category: SkillCategory.FRAMEWORK,
-        experienceID: [5, 6, 7, 8]
+        experienceIDs: [5, 6, 7, 8]
     },
     {
         name: "Test-5",
         category: SkillCategory.SOFT,
-        experienceID: [5]
+        experienceIDs: [5]
     },
     {
         name: "Test-6",
         category: SkillCategory.SOFT,
-        experienceID: [7, 8]
+        experienceIDs: [7, 8]
     },
 ]
 
