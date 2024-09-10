@@ -44,6 +44,7 @@ export type ExperienceData = {
 };
 
 export const skillsList: Skill[] = [
+    //TODO: Create skills
     {
         name: "Test-1",
         category: SkillCategory.TESTING,
@@ -165,7 +166,7 @@ export const workExperience: ExperienceData[] = [
         id: 7,
         name: "Flatiron School",
         role: "Student",
-        description: [],
+        description: [], //TODO: Add placeholder or description
         date: "2022-2023",
         skills: ["Web Design", "CSS", "HTML", "JavaScript", "OOP", "Frontend Web Development", "Backend Web Development", "Ruby on Rails", "Python", "React.js", "Flask"]
     },

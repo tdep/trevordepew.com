@@ -16,7 +16,8 @@ const config: Config = {
       boxShadow: {
         "section-2d": "12px 12px 0 0 rgba(0, 0, 0, 1)",
         "section-2d-small": "6px 6px rgba(0, 0, 0, 1)",
-        "section-2d-skeleton": "12px 12px 0 0 rgba(236, 246, 247, 1)"
+        "section-2d-skeleton": "12px 12px 0 0 rgba(236, 246, 247, 1)",
+        "section-2d-skeleton-small": "6px 6px rgba(146, 146, 147, 1)"
       },
     },
     colors: {

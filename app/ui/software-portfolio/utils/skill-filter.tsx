@@ -7,6 +7,7 @@ import clsx from "clsx"
 
 export default function SkillFilter({ filter, setFilter }: DescriptionFilterProps) {
     //TODO: set visual feedback for button clicks
+    //TODO: Create filter category display
     return(
         <div className={"grid grid-cols-12 gap-1 justify-items-center"}>
             <div className={"w-20 overflow-hidden text-nowrap"}>
@@ -33,7 +34,7 @@ export default function SkillFilter({ filter, setFilter }: DescriptionFilterProp
                                 'bg-carrot-300': skill.category === SkillCategory.FRAMEWORK
                             }
                         )}
-                           onClick={() => {setFilter(skill.experienceIDs)}}
+                           onClick={() => {setFilter(skill.experienceIDs)}} //TODO: When a skill filters the active description out, change selected experience to first in shown list
                         >
                             {skill.name}
                         </p>
