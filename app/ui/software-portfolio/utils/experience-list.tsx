@@ -11,7 +11,7 @@ export default function ExperienceList({ filter, setFilter, selectedExperience, 
 
     return (
         <div className={"grid grid-cols-1 gap-2"}>
-            {workExperience.map((experience) => {
+            {workExperience.toReversed().map((experience) => {
                 return(
                     <div
                         key={experience.id}

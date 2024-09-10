@@ -4,7 +4,6 @@ import { DescriptionFilterProps } from "@/app/ui/software-portfolio/software-exp
 import { inter } from "@/app/ui/fonts"
 
 export default function ExperienceDescriptions( { filter, setFilter, selectedExperience, setDescription }: DescriptionFilterProps) {
-    //TODO: Style descriptions
 
     return (
         <div>

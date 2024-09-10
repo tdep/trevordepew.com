@@ -25,7 +25,14 @@ export enum SkillCategory {
     METHOD,
     CONCEPT,
     TESTING,
-    CLEAR
+    DISCIPLINE,
+    CLEAR,
+    AGRICULTURAL,
+    CRAFT,
+    REPAIR,
+    ELECTRONIC,
+    PERFORMING_ARTS,
+    ORGANIZATION
 }
 
 export type Skill = {
@@ -45,35 +52,240 @@ export type ExperienceData = {
 
 export const skillsList: Skill[] = [
     //TODO: Create skills
+    // {
+    //     name: "Test-1",
+    //     category: SkillCategory.TESTING,
+    //     experienceIDs: [0, 1, 2, 3]
+    // },
+    // {
+    //     name: "Test-2",
+    //     category: SkillCategory.TESTING,
+    //     experienceIDs: [1, 2, 4]
+    // },
+    // {
+    //     name: "Test-3",
+    //     category: SkillCategory.LANGUAGE,
+    //     experienceIDs: [2, 3, 4, 5]
+    // },
+    // {
+    //     name: "Test-4",
+    //     category: SkillCategory.FRAMEWORK,
+    //     experienceIDs: [5, 6, 7, 8]
+    // },
+    // {
+    //     name: "Test-5",
+    //     category: SkillCategory.SOFT,
+    //     experienceIDs: [5]
+    // },
+    // {
+    //     name: "Test-6",
+    //     category: SkillCategory.AGRICULTURAL,
+    //     experienceIDs: [7, 8]
+    // },
     {
-        name: "Test-1",
-        category: SkillCategory.TESTING,
-        experienceIDs: [0, 1, 2, 3]
+        name: "Farming",
+        category: SkillCategory.AGRICULTURAL,
+        experienceIDs: [0]
     },
     {
-        name: "Test-2",
-        category: SkillCategory.TESTING,
-        experienceIDs: [1, 2, 4]
+        name: "Carpentry",
+        category: SkillCategory.CRAFT,
+        experienceIDs: [0, 6]
     },
     {
-        name: "Test-3",
-        category: SkillCategory.LANGUAGE,
-        experienceIDs: [2, 3, 4, 5]
+        name: "Instrument Repair",
+        category: SkillCategory.REPAIR,
+        experienceIDs: [1, 4, 5]
     },
     {
-        name: "Test-4",
-        category: SkillCategory.FRAMEWORK,
-        experienceIDs: [5, 6, 7, 8]
+        name: "Violin",
+        category: SkillCategory.PERFORMING_ARTS,
+        experienceIDs: [1, 2]
     },
     {
-        name: "Test-5",
+        name: "Customer Service",
         category: SkillCategory.SOFT,
+        experienceIDs: [0, 1, 2, 3, 4, 5, 6, 7]
+    },
+    {
+        name: "Electronics Repair",
+        category: SkillCategory.ELECTRONIC,
         experienceIDs: [5]
     },
     {
-        name: "Test-6",
+        name: "Theater Tech",
+        category: SkillCategory.PERFORMING_ARTS,
+        experienceIDs: [1, 4]
+    },
+    {
+        name: "Clerical",
+        category: SkillCategory.ORGANIZATION,
+        experienceIDs: [1, 2, 3, 4, 5, 6]
+    },
+    {
+        name: "Tech Support",
         category: SkillCategory.SOFT,
+        experienceIDs: [5, 6]
+    },
+    {
+        name: "Web Design",
+        category: SkillCategory.DISCIPLINE,
+        experienceIDs: [7, 8, 9, 10]
+    },
+    {
+        name: "CSS",
+        category: SkillCategory.LANGUAGE,
+        experienceIDs: [7]
+    },
+    {
+        name: "HTML",
+        category: SkillCategory.LANGUAGE,
         experienceIDs: [7, 8]
+    },
+    {
+        name: "JavaScript",
+        category: SkillCategory.LANGUAGE,
+        experienceIDs: [7, 8]
+    },
+    {
+        name: "OOP",
+        category: SkillCategory.CONCEPT,
+        experienceIDs: [7, 8, 9]
+    },
+    {
+        name: "Frontend Web Development",
+        category: SkillCategory.DISCIPLINE,
+        experienceIDs: [7, 8, 10]
+    },
+    {
+        name: "Backend Web Development",
+        category: SkillCategory.DISCIPLINE,
+        experienceIDs: [7, 8, 9]
+    },
+    {
+        name: "Ruby on Rails",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [7]
+    },
+    {
+        name: "Python",
+        category: SkillCategory.LANGUAGE,
+        experienceIDs: [7, 9]
+    },
+    {
+        name: "React.js",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [7, 8]
+    },
+    {
+        name: "Flask",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [7]
+    },
+    {
+        name: "Java",
+        category: SkillCategory.LANGUAGE,
+        experienceIDs: [8]
+    },
+    {
+        name: "Maven",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [8]
+    },
+    {
+        name: "Unit Testing",
+        category: SkillCategory.TESTING,
+        experienceIDs: [8, 9]
+    },
+    {
+        name: "GKE",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [8]
+    },
+    {
+        name: "Protocol Buffers",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [8]
+    },
+    {
+        name: "Docker",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [8]
+    },
+    {
+        name: "gRPC",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [8]
+    },
+    {
+        name: "Integration Testing",
+        category: SkillCategory.TESTING,
+        experienceIDs: [8, 9]
+    },
+    {
+        name: "REST APIs",
+        category: SkillCategory.CONCEPT,
+        experienceIDs: [7, 8, 9]
+    },
+    {
+        name: "Pair Programming",
+        category: SkillCategory.METHOD,
+        experienceIDs: [7, 8, 9]
+    },
+    {
+        name: "TypeScript",
+        category: SkillCategory.LANGUAGE,
+        experienceIDs: [8]
+    },
+    {
+        name: "Next.js",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [8, 9]
+    },
+    {
+        name: "Django",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [9]
+    },
+    {
+        name: "Django REST Framework",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [9]
+    },
+    {
+        name: "SQLite",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [7, 9]
+    },
+    {
+        name: "JWT",
+        category: SkillCategory.FRAMEWORK,
+        experienceIDs: [7, 8, 9]
+    },
+    {
+        name: "UX",
+        category: SkillCategory.CONCEPT,
+        experienceIDs: [7, 8, 9, 10]
+    },
+    {
+        name: "Design",
+        category: SkillCategory.METHOD,
+        experienceIDs: [7, 8, 9, 10]
+    },
+    {
+        name: "Project Planning",
+        category: SkillCategory.METHOD,
+        experienceIDs: [7, 8, 9, 10]
+    },
+    {
+        name: "Wireframe",
+        category: SkillCategory.METHOD,
+        experienceIDs: [7, 8, 9, 10]
+    },
+    {
+        name: "SEO",
+        category: SkillCategory.CONCEPT,
+        experienceIDs: [7, 10]
     },
 ]
 
@@ -181,7 +393,7 @@ export const workExperience: ExperienceData[] = [
             "Designed and refined new Next.JS Backend For Frontend(BFF) services, optimizing request processing and incorporating pagination, which boosted frontend client performance and reduced response times by 50-60%."
         ],
         date: "2023-2024",
-        skills: ["Java", "Maven", "Unit Testing", "OOP", "GKE", "Protcol Buffers", "Backend Web Development", "Frontend Web Development", "Docker", "gRPC", "Integration Testing", "REST APIs", "Pair Programming", "TypeScript", "Next.js"]
+        skills: ["Java", "Maven", "Unit Testing", "OOP", "GKE", "Protocol Buffers", "Backend Web Development", "Frontend Web Development", "Docker", "gRPC", "Integration Testing", "REST APIs", "Pair Programming", "TypeScript", "Next.js"]
     },
     {
         id: 9,
