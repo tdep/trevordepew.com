@@ -1,18 +1,18 @@
 import { SkillCategory, skillsList } from "@/app/ui/software-portfolio/utils/work-experience"
-import { FilterProps } from "@/app/ui/software-portfolio/software-experience"
+import { DescriptionFilterProps } from "@/app/ui/software-portfolio/software-experience"
 import { inter } from "@/app/ui/fonts"
 import clsx from "clsx"
 
 
 
-export default function SkillFilter({ filter, onSelect }: FilterProps) {
+export default function SkillFilter({ filter, setFilter }: DescriptionFilterProps) {
     //TODO: set visual feedback for button clicks
     return(
         <div className={"grid grid-cols-12 gap-1 justify-items-center"}>
             <div className={"w-20 overflow-hidden text-nowrap"}>
                 <p
                     className={"text-sm text-center border-2 border-black rounded-lg p-1 bg-gray-600 hover:bg-gray-800 hover:cursor-pointer"}
-                    onClick={() => {onSelect([0,1,2,3,4,5,6,7,8,9,10])}} //TODO: see software-experience
+                    onClick={() => {setFilter([0,1,2,3,4,5,6,7,8,9,10])}} //TODO: see software-experience
                 >
                     Clear Filter
                 </p>
@@ -33,8 +33,10 @@ export default function SkillFilter({ filter, onSelect }: FilterProps) {
                                 'bg-carrot-300': skill.category === SkillCategory.FRAMEWORK
                             }
                         )}
-                           onClick={() => {onSelect(skill.experienceIDs)}}
-                        >{skill.name}</p>
+                           onClick={() => {setFilter(skill.experienceIDs)}}
+                        >
+                            {skill.name}
+                        </p>
                     </div>
                 );
             })}
