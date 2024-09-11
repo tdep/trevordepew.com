@@ -17,7 +17,7 @@ export default function ExperienceDescriptions( { selectedExperience }: Descript
                                 <p
                                     key={i}
                                     className={clsx(
-                                        `${inter.className} text-2xl m-3 p-2 border-2 border-gray-600 bg-gray-200 shadow-section-2d-skeleton-small`,
+                                        `${inter.className} text-xl lg:text-2xl m-3 p-2 border-2 border-gray-600 bg-gray-200 shadow-section-2d-skeleton-small`,
                                         {
                                             'hidden': experience.id !== selectedExperience,
                                             'rounded-t-xl': i === 0,

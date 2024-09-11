@@ -22,7 +22,7 @@ export default function ExperienceList({ filteredExperiences, selectedExperience
                                 {
                                     'hidden': !filterExperience(experience.id),
                                     'bg-belize-300': experience.id === selectedExperience,
-                                    'hover:bg-amethyst-300 hover:cursor-pointer': experience.id !== selectedExperience
+                                    'hover:bg-carrot-300 hover:cursor-pointer': experience.id !== selectedExperience
                                 }
                             )}
                             onClick={() => {

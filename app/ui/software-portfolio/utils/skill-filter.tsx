@@ -8,10 +8,10 @@ export default function SkillFilter({ setFilteredExperiences, activeFilter, setA
     //TODO: set visual feedback for button clicks
     //TODO: Create filter category display
     return(
-        <div className={"grid grid-cols-12"}>
-            <div className={"col-span-1 w-24 overflow-hidden text-nowrap mr-4"}>
+        <div className={"flex flex-row"}>
+            <div className={"text-nowrap mr-4"}>
                 <p
-                    className={"flex items-center justify-center h-32 text-lg border-2 border-black rounded-lg p-1 bg-gray-600 hover:bg-gray-800 hover:cursor-pointer"}
+                    className={"flex items-center justify-center h-32 text-lg border-2 border-black rounded-lg p-1 bg-gray-600 shadow-button-inner hover:bg-gray-800 hover:cursor-pointer"}
                     onClick={() => {
                         setFilteredExperiences([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
                         setActiveFilter(null)
@@ -21,7 +21,7 @@ export default function SkillFilter({ setFilteredExperiences, activeFilter, setA
                 </p>
             </div>
 
-            <div className={"col-span-11 flex flex-wrap justify-items-center"}>
+            <div className={"flex flex-wrap justify-items-center"}>
 
                 {skillsList.map((skill) => {
                     return (
