@@ -29,7 +29,9 @@ export default function SoftwareExperience() {
                     here.
                 </p>
             </div>
-            <div className={"mt-4"}>
+
+            {/* Desktop */}
+            <div className={"hidden lg:block mt-4"}>
                 <div className={"w-full flex justify-center border-2 border-black shadow-section-2d-small"}>
                     <div className={"m-2 w-full"}>
                         <SkillFilter
@@ -54,6 +56,32 @@ export default function SoftwareExperience() {
                         />
                     </div>
                     <div className={"col-span-3"}>
+                        <ExperienceDescriptions
+                            filteredExperiences={filteredExperiences}
+                            setFilteredExperiences={filter => setFilteredExperiences(filter)}
+                            selectedExperience={selectedExperience}
+                            setDescription={selectedExperience => setSelectedExperience(selectedExperience)}
+                            activeFilter={activeFilter}
+                            setActiveFilter={activeFilter => setActiveFilter(activeFilter)}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            {/* Mobile */}
+            <div className={"block lg:hidden"}>
+                <div className={"flex flex-col mt-4"}>
+                    <div className={""}>
+                        <ExperienceList
+                            filteredExperiences={filteredExperiences}
+                            setFilteredExperiences={filter => setFilteredExperiences(filter)}
+                            selectedExperience={selectedExperience}
+                            setDescription={selectedExperience => setSelectedExperience(selectedExperience)}
+                            activeFilter={activeFilter}
+                            setActiveFilter={activeFilter => setActiveFilter(activeFilter)}
+                        />
+                    </div>
+                    <div className={""}>
                         <ExperienceDescriptions
                             filteredExperiences={filteredExperiences}
                             setFilteredExperiences={filter => setFilteredExperiences(filter)}
