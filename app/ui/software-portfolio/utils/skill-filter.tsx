@@ -30,7 +30,7 @@ export default function SkillFilter({ setFilteredExperiences, activeFilter, setA
                             className={'overflow-hidden text-nowrap'}
                         >
                             <p className={clsx(
-                                `${inter.className} text-[14px] text-center border-2 border-black rounded-lg p-1 lg:hover:opacity-50 hover:cursor-pointer`,
+                                `${inter.className} text-[14px] text-center border-2 border-black rounded-lg p-1 m-0.5 lg:hover:opacity-50 hover:cursor-pointer`,
                                 {
                                     'bg-belize-300': skill.category === SkillCategory.LANGUAGE,
                                     'bg-carrot-300': skill.category === SkillCategory.FRAMEWORK,
