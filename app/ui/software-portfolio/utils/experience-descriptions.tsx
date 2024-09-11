@@ -3,7 +3,7 @@ import clsx from "clsx"
 import { DescriptionFilterProps } from "@/app/ui/software-portfolio/software-experience"
 import { inter } from "@/app/ui/fonts"
 
-export default function ExperienceDescriptions( { filter, setFilter, selectedExperience, setDescription }: DescriptionFilterProps) {
+export default function ExperienceDescriptions( { selectedExperience }: DescriptionFilterProps) {
 
     return (
         <div>
@@ -17,7 +17,7 @@ export default function ExperienceDescriptions( { filter, setFilter, selectedExp
                                 <p
                                     key={i}
                                     className={clsx(
-                                        `${inter.className} text-2xl m-3 p-2 border-2 border-gray-600 bg-gray-400 shadow-section-2d-skeleton-small`,
+                                        `${inter.className} text-2xl m-3 p-2 border-2 border-gray-600 bg-gray-200 shadow-section-2d-skeleton-small`,
                                         {
                                             'hidden': experience.id !== selectedExperience,
                                             'rounded-t-xl': i === 0,

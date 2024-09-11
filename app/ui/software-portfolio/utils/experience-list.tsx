@@ -3,10 +3,10 @@ import { workExperience } from "@/app/ui/software-portfolio/utils/work-experienc
 import clsx from "clsx"
 import { inter } from "@/app/ui/fonts"
 
-export default function ExperienceList({ filter, setFilter, selectedExperience, setDescription }: DescriptionFilterProps) {
+export default function ExperienceList({ filteredExperiences, selectedExperience, setDescription }: DescriptionFilterProps) {
 
     function filterExperience(experienceId: number):boolean {
-        return filter.includes(experienceId);
+        return filteredExperiences.includes(experienceId);
     }
 
     return (

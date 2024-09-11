@@ -6,15 +6,18 @@ import ExperienceList from "@/app/ui/software-portfolio/utils/experience-list"
 import ExperienceDescriptions from "@/app/ui/software-portfolio/utils/experience-descriptions"
 
 export type DescriptionFilterProps = {
-    filter: number[],
-    setFilter: Dispatch<SetStateAction<number[]>>
+    filteredExperiences: number[],
+    setFilteredExperiences: Dispatch<SetStateAction<number[]>>
     selectedExperience: number,
-    setDescription: Dispatch<SetStateAction<number>>
+    setDescription: Dispatch<SetStateAction<number>>,
+    activeFilter: string | null,
+    setActiveFilter: Dispatch<SetStateAction<string | null>>
 }
 
 export default function SoftwareExperience() {
-    const [filter, setFilter] = useState<number[]>([0,1,2,3,4,5,6,7,8,9,10]); //TODO: change to grab list of exp. ids instead of hardcoding
+    const [filteredExperiences, setFilteredExperiences] = useState<number[]>([0,1,2,3,4,5,6,7,8,9,10]); //TODO: change to grab list of exp. ids instead of hardcoding
     const [selectedExperience, setSelectedExperience] = useState<number>(8);
+    const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
     return (
         <div className={"flex flex-col leading-none bg-white-100 m-4 mt-2 lg:m-8"}>
@@ -30,28 +33,34 @@ export default function SoftwareExperience() {
                 <div className={"w-full flex justify-center border-2 border-black shadow-section-2d-small"}>
                     <div className={"m-2 w-full"}>
                         <SkillFilter
-                            filter={filter}
-                            setFilter={filter => setFilter(filter)}
+                            filteredExperiences={filteredExperiences}
+                            setFilteredExperiences={filter => setFilteredExperiences(filter)}
                             selectedExperience={selectedExperience}
                             setDescription={selectedExperience => setSelectedExperience(selectedExperience)}
+                            activeFilter={activeFilter}
+                            setActiveFilter={activeFilter => setActiveFilter(activeFilter)}
                         />
                     </div>
                 </div>
                 <div className={"grid grid-cols-4 mt-4"}>
                     <div className={"col-span-1"}>
                         <ExperienceList
-                            filter={filter}
-                            setFilter={filter => setFilter(filter)}
+                            filteredExperiences={filteredExperiences}
+                            setFilteredExperiences={filter => setFilteredExperiences(filter)}
                             selectedExperience={selectedExperience}
                             setDescription={selectedExperience => setSelectedExperience(selectedExperience)}
+                            activeFilter={activeFilter}
+                            setActiveFilter={activeFilter => setActiveFilter(activeFilter)}
                         />
                     </div>
                     <div className={"col-span-3"}>
                         <ExperienceDescriptions
-                            filter={filter}
-                            setFilter={filter => setFilter(filter)}
+                            filteredExperiences={filteredExperiences}
+                            setFilteredExperiences={filter => setFilteredExperiences(filter)}
                             selectedExperience={selectedExperience}
                             setDescription={selectedExperience => setSelectedExperience(selectedExperience)}
+                            activeFilter={activeFilter}
+                            setActiveFilter={activeFilter => setActiveFilter(activeFilter)}
                         />
                     </div>
                 </div>

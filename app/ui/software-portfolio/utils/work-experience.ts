@@ -1,23 +1,3 @@
-// export type SkillExperiences = {
-//     skill: string;
-//     category: SkillCategory;
-//     experiences: string[];
-// };
-
-// export const Experience = {
-//     0: "BERRY_FARM",
-//     1: "MUSICA",
-//     2: "VIOLIN_TEACHER",
-//     3: "BARNES_AND_NOBLE",
-//     4: "STUYVESANT",
-//     5: "ROLI",
-//     6: "AROLLA",
-//     7: "FLATIRON",
-//     8: "SPOTIFY",
-//     9: "SONGSHARE",
-//     10: "LTM"
-// }
-
 export enum SkillCategory {
     LANGUAGE,
     FRAMEWORK,
@@ -26,13 +6,8 @@ export enum SkillCategory {
     CONCEPT,
     TESTING,
     DISCIPLINE,
-    CLEAR,
-    AGRICULTURAL,
     CRAFT,
-    REPAIR,
-    ELECTRONIC,
     PERFORMING_ARTS,
-    ORGANIZATION
 }
 
 export type Skill = {
@@ -84,7 +59,7 @@ export const skillsList: Skill[] = [
     // },
     {
         name: "Farming",
-        category: SkillCategory.AGRICULTURAL,
+        category: SkillCategory.CRAFT,
         experienceIDs: [0]
     },
     {
@@ -94,7 +69,7 @@ export const skillsList: Skill[] = [
     },
     {
         name: "Instrument Repair",
-        category: SkillCategory.REPAIR,
+        category: SkillCategory.CRAFT,
         experienceIDs: [1, 4, 5]
     },
     {
@@ -109,7 +84,7 @@ export const skillsList: Skill[] = [
     },
     {
         name: "Electronics Repair",
-        category: SkillCategory.ELECTRONIC,
+        category: SkillCategory.CRAFT,
         experienceIDs: [5]
     },
     {
@@ -119,7 +94,7 @@ export const skillsList: Skill[] = [
     },
     {
         name: "Clerical",
-        category: SkillCategory.ORGANIZATION,
+        category: SkillCategory.SOFT,
         experienceIDs: [1, 2, 3, 4, 5, 6]
     },
     {
