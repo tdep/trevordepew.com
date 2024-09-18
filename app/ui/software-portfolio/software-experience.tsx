@@ -1,9 +1,9 @@
 'use client';
 
-import SkillFilter from "@/app/ui/software-portfolio/utils/skill-filter"
+import SkillFilter from "@/app/ui/software-portfolio/utils/experience/skill-filter"
 import { Dispatch, SetStateAction, useState } from "react"
-import ExperienceList from "@/app/ui/software-portfolio/utils/experience-list"
-import ExperienceDescriptions from "@/app/ui/software-portfolio/utils/experience-descriptions"
+import ExperienceList from "@/app/ui/software-portfolio/utils/experience/experience-list"
+import ExperienceDescriptions from "@/app/ui/software-portfolio/utils/experience/experience-descriptions"
 
 export type DescriptionFilterProps = {
     filteredExperiences: number[],

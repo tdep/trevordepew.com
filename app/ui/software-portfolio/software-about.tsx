@@ -1,6 +1,6 @@
 import Image from "next/image"
-import TechSkillsGrid from "@/app/ui/software-portfolio/utils/tech-skills-grid"
-import EduGrid from "@/app/ui/software-portfolio/utils/edu-grid"
+import TechSkillsGrid from "@/app/ui/software-portfolio/utils/about/tech-skills-grid"
+import EduGrid from "@/app/ui/software-portfolio/utils/about/edu-grid"
 
 export default function SoftwareAbout() {
     // TODO: Might need to adjust slightly for laptop 1024px but otherwise looks good
