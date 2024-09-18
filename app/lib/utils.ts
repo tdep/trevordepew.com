@@ -16,4 +16,24 @@ export const heroImagePicker = () => {
     } else {
         return heroImages[1];
     }
-}
+};
+
+export const generatePagination = (currentPage: number, totalPages: number) => {
+    // Total pages is 7 or less, display all pages without ellipses.
+    if (totalPages <= 7) {
+        return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+
+    // Current page is in first 3 pages, show first three, ellipses, last two.
+    if (currentPage <= 3) {
+        return [1, 2, 3, '...', totalPages - 1, totalPages];
+    }
+
+    // Current page is in last 3 pages, show first two, ellipses, last three.
+    if (currentPage >= totalPages - 2) {
+        return [1, 2, '...', totalPages - 2, totalPages -1, totalPages];
+    }
+
+    // Current page somewhere in the middle, show first, ellipses, current page and neighbors, ellipses, last page.
+    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+};
