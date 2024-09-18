@@ -1,11 +1,30 @@
+'use client';
+
 import ProjectPagination from "@/app/ui/software-portfolio/utils/projects/project-pagination"
 import ProjectCarousel from "@/app/ui/software-portfolio/utils/projects/project-carousel"
 import { projects } from "@/app/ui/software-portfolio/utils/projects/projects"
 import { useState } from "react"
 
+type CurrentPage = {
+    thisPage: number;
+    firstPageIndex: number;
+    lastPageIndex: number;
+};
+
 export default function SoftwareProjects() {
     const totalPages = Math.ceil(projects.length / 2)
     const [currentPage, setCurrentPage] = useState<number>(0);
+    const [cardsPerPage, setCardsPerPage] = useState<number>(2);
+    const lastCardIndex = currentPage * cardsPerPage;
+    const firstCardIndex = lastCardIndex - cardsPerPage;
+    const lastPage = 3;
+
+    const thisPage: CurrentPage = {
+        thisPage: currentPage,
+        firstPageIndex: firstCardIndex,
+        lastPageIndex: lastCardIndex
+    }
+
     return (
         <div className={"bg-white-100 m-4 mt-2 lg:m-8"}>
             <div className={"flex flex-row w-full leading-none justify-between"}>
@@ -14,11 +33,16 @@ export default function SoftwareProjects() {
                     <p className={"text-xl"}>Check out some of the things I&apos;ve built!</p>
                 </div>
                 <div>
-                    <ProjectPagination currentPage={currentPage} totalPages={totalPages} setCurrentPage={currentPage => setCurrentPage(currentPage)}/>
+                    <ProjectPagination
+                        currentPage={currentPage}
+                        lastPage={lastPage}
+                        maxLength={7}
+                        setCurrentPage={setCurrentPage}
+                    />
                 </div>
             </div>
             <div>
-                <ProjectCarousel />
+                <ProjectCarousel {...thisPage}/>
             </div>
         </div>
     )
