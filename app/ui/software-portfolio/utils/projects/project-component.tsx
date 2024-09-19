@@ -11,7 +11,6 @@ type ProjectComponentProps = {
 export default function ProjectComponent(props: ProjectComponentProps){
     const {projects} = props;
     const {currentPage} = props;
-    const displayedProjects = projects.slice(currentPage.firstPageIndex, currentPage.lastPageIndex);
 
     return (
         <div className={"mt-6 flow-root"}>
@@ -24,7 +23,8 @@ export default function ProjectComponent(props: ProjectComponentProps){
                                 className={clsx("mb-2 w-full bg-white-100 p-4 border-2 border-black shadow-section-2d-small",
                                     {
                                         "rounded-t-lg": project.id === 0,
-                                        "rounded-b-lg": project.id === projects.length - 1
+                                        "rounded-b-lg": project.id === projects.length - 1,
+                                        "hidden": project.id !== 4
                                     }
                                 )}
                             >

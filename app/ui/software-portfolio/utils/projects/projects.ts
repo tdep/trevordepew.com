@@ -23,7 +23,7 @@ export const projects: ProjectData[] =[
         ],
         links: [
             {
-                name: "github",
+                name: "GitHub",
                 address: "https://github.com/tdep/tadlab"
             }
         ],
@@ -39,7 +39,7 @@ export const projects: ProjectData[] =[
         ],
         links: [
             {
-                name: "github",
+                name: "GitHub",
                 address: "https://github.com/tdep/Sequinzer-6001"
             }
         ],
@@ -56,7 +56,7 @@ export const projects: ProjectData[] =[
         ],
         links: [
             {
-                name: "github",
+                name: "GitHub",
                 address: "https://github.com/tdep/Sequinzer-6001-2a"
             }
         ],
@@ -71,7 +71,7 @@ export const projects: ProjectData[] =[
         ],
         links: [
             {
-                name: "github",
+                name: "GitHub",
                 address: "https://github.com/tdep/webaudio-synth"
             }
         ],
@@ -79,7 +79,7 @@ export const projects: ProjectData[] =[
     },
     {
         id: 4,
-        name: "trevordepew.com / Portfolio Website",
+        name: "Portfolio Website",
         description: [
             "This is the third iteration, the first was a build that I was working on to figure out what I wanted to do.",
             "The second was an app created using Vite and GitHub Pages, but I ran into a number of issues that were taking too much time.",
@@ -89,22 +89,22 @@ export const projects: ProjectData[] =[
         ],
         links: [
             {
-                name: "v2-github",
+                name: "v2-GitHub",
                 address: "https://github.com/tdep/portfolio-site-v2"
             },
             {
-                name: "v3-client-github",
+                name: "v3-Client-GitHub",
                 address: "https://github.com/tdep/tdep-tadlab-client"
             },            {
-                name: "v3-api-github",
+                name: "v3-API GitHub",
                 address: "https://github.com/tdep/tdep-tadlab-api"
             },
             {
-                name: "v4-github",
+                name: "v4-GitHub",
                 address: "https://github.com/tdep/trevordepew.com"
             },
             {
-                name: "demo",
+                name: "Demo",
                 address: "https://www.trevordepew.com"
             }
         ],
