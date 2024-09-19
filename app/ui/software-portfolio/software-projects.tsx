@@ -5,6 +5,7 @@ import ProjectCarousel from "@/app/ui/software-portfolio/utils/projects/project-
 import { projects } from "@/app/ui/software-portfolio/utils/projects/projects"
 import { useState } from "react"
 import { CurrentPage } from "@/app/lib/types"
+import ProjectComponent from "@/app/ui/software-portfolio/utils/projects/project-component"
 
 export default function SoftwareProjects() {
     const lastPage = Math.ceil(projects.length / 2)
@@ -36,7 +37,7 @@ export default function SoftwareProjects() {
                 </div>
             </div>
             <div>
-                <ProjectCarousel {...thisPage}/>
+                <ProjectComponent projects={projects} currentPage={thisPage} />
             </div>
         </div>
     )

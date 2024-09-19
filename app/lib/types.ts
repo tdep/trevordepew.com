@@ -5,7 +5,3 @@ export type CurrentPage = {
     firstPageIndex: number;
     lastPageIndex: number;
 };
-
-export type ProjectsComponentProps = {
-    projects: ProjectData[];
-};

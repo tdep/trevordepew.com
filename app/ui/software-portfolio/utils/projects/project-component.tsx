@@ -1,19 +1,32 @@
-import { ProjectsComponentProps, CurrentPage } from "@/app/lib/types"
+import { CurrentPage } from "@/app/lib/types"
 import ProjectCard from "@/app/ui/software-portfolio/utils/projects/project-card"
+import { ProjectData } from "@/app/ui/software-portfolio/utils/projects/projects"
+import clsx from "clsx"
 
-export default function ProjectComponent(props: ProjectsComponentProps, currentPage: CurrentPage) {
+type ProjectComponentProps = {
+    projects: ProjectData[];
+    currentPage: CurrentPage;
+}
+
+export default function ProjectComponent(props: ProjectComponentProps){
     const {projects} = props;
+    const {currentPage} = props;
     const displayedProjects = projects.slice(currentPage.firstPageIndex, currentPage.lastPageIndex);
 
     return (
         <div className={"mt-6 flow-root"}>
             <div className={"inline-block min-w-full align-middle"}>
-                <div className={"rounded-lg bg-gray-100 p-2 lg:pt-0"}>
+                <div className={""}>
                     <div className={""}>
-                        {displayedProjects.map((project) => (
+                        {projects.map((project) => (
                             <div
                                 key={project.id}
-                                className={"mb-2 w-full bg-white-100 p-4"}
+                                className={clsx("mb-2 w-full bg-white-100 p-4 border-2 border-black shadow-section-2d-small",
+                                    {
+                                        "rounded-t-lg": project.id === 0,
+                                        "rounded-b-lg": project.id === projects.length - 1
+                                    }
+                                )}
                             >
                                 <ProjectCard
                                     id={project.id}
