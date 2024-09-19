@@ -1,11 +1,11 @@
-import { CurrentPage } from "@/app/lib/types"
+import { PageIndices } from "@/app/lib/types"
 import ProjectCard from "@/app/ui/software-portfolio/utils/projects/project-card"
 import { ProjectData } from "@/app/ui/software-portfolio/utils/projects/projects"
 import clsx from "clsx"
 
 type ProjectComponentProps = {
     projects: ProjectData[];
-    currentPage: CurrentPage;
+    currentPage: number;
 }
 
 export default function ProjectComponent(props: ProjectComponentProps){

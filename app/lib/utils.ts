@@ -17,3 +17,20 @@ export const heroImagePicker = () => {
         return heroImages[1];
     }
 };
+
+export const generatePagination = (currentPage: number, totalPages: number) => {
+    // Total number of pages is 7 or less, display all pages without ellipses.
+    if (totalPages <= 7) {
+        return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    // Current page is within first 3 pages, show first three, ellipses, and last 2 pages.
+    if (currentPage <= 3) {
+        return [1, 2, 3, '...', totalPages - 1, totalPages];
+    }
+    // Current page is within last 3, show first 2, ellipses, last 3 pages.
+    if (currentPage >= totalPages - 2) {
+        return [1, 2, '...', totalPages - 2, totalPages - 1, totalPages];
+    }
+    // Current page is somewhere in the middle
+    return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
+}

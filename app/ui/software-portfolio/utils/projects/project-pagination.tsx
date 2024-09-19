@@ -1,5 +1,14 @@
-export default function ProjectPagination(){
+import { PageIndices } from "@/app/lib/types"
+
+type PaginationProps = {
+    pages: PageIndices
+}
+
+export default function ProjectPagination(props: PaginationProps){
+    const {pages} = props;
     return (
-        <p>Pagination</p>
+        <div>
+            {pages.lastPageIndex}
+        </div>
     )
 }

@@ -1,23 +1,22 @@
-'use client';
+import ProjectPagination from "@/app/ui/software-portfolio/utils/projects/project-pagination";
+import ProjectComponent from "@/app/ui/software-portfolio/utils/projects/project-component";
+import ProjectSearch from "@/app/ui/software-portfolio/utils/projects/project-search"
+import { projects } from "@/app/ui/software-portfolio/utils/projects/projects";
+import { fetchProjects } from "@/app/lib/data";
 
-import ProjectPagination from "@/app/ui/software-portfolio/utils/projects/project-pagination"
-import { projects } from "@/app/ui/software-portfolio/utils/projects/projects"
-import { useState } from "react"
-import { CurrentPage } from "@/app/lib/types"
-import ProjectComponent from "@/app/ui/software-portfolio/utils/projects/project-component"
 
-export default function SoftwareProjects() {
-    const lastPage = Math.ceil(projects.length / 2)
-    const [currentPage, setCurrentPage] = useState<number>(0);
-    const cardsPerPage = 2;
-    const lastCardIndex = currentPage * cardsPerPage;
-    const firstCardIndex = lastCardIndex - cardsPerPage;
-
-    const thisPage: CurrentPage = {
-        thisPage: currentPage,
-        firstPageIndex: firstCardIndex,
-        lastPageIndex: lastCardIndex
+export default async function SoftwareProjects({
+    searchParams,
+                                               }: {
+    searchParams?: {
+        query?: string;
+        page?: string;
     }
+}) {
+    const query = searchParams?.query || '';
+    const currentPage = Number(searchParams?.page) || 1;
+
+    const totalPages = await fetchProjects(query);
 
     return (
         <div className={"bg-white-100 m-4 mt-2 lg:m-8"}>
@@ -27,13 +26,12 @@ export default function SoftwareProjects() {
                     <p className={"text-xl"}>Check out some of the things I&apos;ve built!</p>
                 </div>
                 <div>
-                    <ProjectPagination
-
-                    />
+                    <ProjectSearch placeholder={"Search projects..."} />
+                    <ProjectPagination pages={pages}/>
                 </div>
             </div>
             <div>
-                <ProjectComponent projects={projects} currentPage={thisPage} />
+                <ProjectComponent projects={projects} currentPage={pages.thisPage} />
             </div>
         </div>
     )
