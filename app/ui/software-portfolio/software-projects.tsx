@@ -4,20 +4,14 @@ import ProjectPagination from "@/app/ui/software-portfolio/utils/projects/projec
 import ProjectCarousel from "@/app/ui/software-portfolio/utils/projects/project-carousel"
 import { projects } from "@/app/ui/software-portfolio/utils/projects/projects"
 import { useState } from "react"
-
-type CurrentPage = {
-    thisPage: number;
-    firstPageIndex: number;
-    lastPageIndex: number;
-};
+import { CurrentPage } from "@/app/lib/types"
 
 export default function SoftwareProjects() {
-    const totalPages = Math.ceil(projects.length / 2)
+    const lastPage = Math.ceil(projects.length / 2)
     const [currentPage, setCurrentPage] = useState<number>(0);
     const [cardsPerPage, setCardsPerPage] = useState<number>(2);
     const lastCardIndex = currentPage * cardsPerPage;
     const firstCardIndex = lastCardIndex - cardsPerPage;
-    const lastPage = 3;
 
     const thisPage: CurrentPage = {
         thisPage: currentPage,
