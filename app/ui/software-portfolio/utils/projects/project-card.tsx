@@ -42,14 +42,12 @@ export default function ProjectCard(project: ProjectData) {
 
         return (
             <div className={"flex flex-row p-3"}>
-                <div className={"flex items-start lg:w-[60rem] mr-4"}>
+                <div className={"flex items-start w-full mr-4"}>
                     <Image
                         src={thisProject.image}
-                        width={50}
-                        height={50}
-                        className={
-                            "object-cover w-full h-1/2 border-2 border-black shadow-section-2d-small ease-in-out transition-transform hover:object-fill hover:translate-x-40 hover:w-fit hover:h-auto hover:shadow-none hover:z-10 hover:scale-[2.5] hover:cursor-pointer"
-                        }
+                        width={250}
+                        height={250}
+                        className={"border-2 border-black shadow-section-2d-small"}
                         alt={`Image of the ${thisProject.name} project.`}
                     />
                 </div>

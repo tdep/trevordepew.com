@@ -1,16 +1,16 @@
-import { PageIndices } from "@/app/lib/types"
 import ProjectCard from "@/app/ui/software-portfolio/utils/projects/project-card"
-import { ProjectData } from "@/app/ui/software-portfolio/utils/projects/projects"
 import clsx from "clsx"
+import { fetchFilteredProjects } from "@/app/lib/data"
 
-type ProjectComponentProps = {
-    projects: ProjectData[];
+
+export default async function ProjectComponent({
+    query,
+    currentPage,
+                                         }: {
+    query: string;
     currentPage: number;
-}
-
-export default function ProjectComponent(props: ProjectComponentProps){
-    const {projects} = props;
-    const {currentPage} = props;
+}){
+    const projects = await fetchFilteredProjects(query, currentPage);
 
     return (
         <div className={"mt-6 flow-root"}>
@@ -24,7 +24,6 @@ export default function ProjectComponent(props: ProjectComponentProps){
                                     {
                                         "rounded-t-lg": project.id === 0,
                                         "rounded-b-lg": project.id === projects.length - 1,
-                                        "hidden": project.id !== 4
                                     }
                                 )}
                             >
@@ -40,7 +39,6 @@ export default function ProjectComponent(props: ProjectComponentProps){
                     </div>
                 </div>
             </div>
-
         </div>
-    )
+    );
 }

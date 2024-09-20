@@ -1,8 +1,7 @@
 import ProjectPagination from "@/app/ui/software-portfolio/utils/projects/project-pagination";
 import ProjectComponent from "@/app/ui/software-portfolio/utils/projects/project-component";
 import ProjectSearch from "@/app/ui/software-portfolio/utils/projects/project-search"
-import { projects } from "@/app/ui/software-portfolio/utils/projects/projects";
-import { fetchProjects } from "@/app/lib/data";
+import { fetchProjectsPages } from "@/app/lib/data"
 
 
 export default async function SoftwareProjects({
@@ -16,7 +15,7 @@ export default async function SoftwareProjects({
     const query = searchParams?.query || '';
     const currentPage = Number(searchParams?.page) || 1;
 
-    const totalPages = await fetchProjects(query);
+    const totalPages = await fetchProjectsPages(query);
 
     return (
         <div className={"bg-white-100 m-4 mt-2 lg:m-8"}>
@@ -25,14 +24,10 @@ export default async function SoftwareProjects({
                     <p className={"text-7xl"}>Projects</p>
                     <p className={"text-xl"}>Check out some of the things I&apos;ve built!</p>
                 </div>
-                <div>
-                    <ProjectSearch placeholder={"Search projects..."} />
-                    <ProjectPagination pages={pages}/>
-                </div>
             </div>
             <div>
-                <ProjectComponent projects={projects} currentPage={pages.thisPage} />
+                <ProjectComponent query={""} currentPage={currentPage} />
             </div>
         </div>
-    )
+    );
 }
