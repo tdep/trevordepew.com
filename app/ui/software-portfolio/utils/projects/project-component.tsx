@@ -20,7 +20,7 @@ export default async function ProjectComponent({
                         {projects.map((project) => (
                             <div
                                 key={project.id}
-                                className={clsx("mb-2 w-full bg-white-100 p-4 border-2 border-black shadow-section-2d-small",
+                                className={clsx("mb-4 lg:mb-2 w-full bg-white-100 p-4 border-2 border-black shadow-section-2d-small",
                                     {
                                         "rounded-t-lg": project.id === 0,
                                         "rounded-b-lg": project.id === projects.length - 1,

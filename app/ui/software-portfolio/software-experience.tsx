@@ -20,7 +20,7 @@ export default function SoftwareExperience() {
     const [activeFilter, setActiveFilter] = useState<string | null>(null);
 
     return (
-        <div className={"flex flex-col leading-none bg-white-100 m-4 mt-2 lg:m-8"}>
+        <div className={"flex flex-col lg:leading-none bg-white-100 m-4 mt-2 lg:m-8"}>
             <div className={"flex flex-col items-start w-full text-center"}>
                 <p className={"text-5xl mb-2"}>Work Experience</p>
                 <p className={"w-full text-lg text-justify mb-1 mt-2 lg:text-xl"}>

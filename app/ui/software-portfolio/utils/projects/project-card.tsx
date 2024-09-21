@@ -156,25 +156,51 @@ export default function ProjectCard(project: ProjectData) {
 
         return (
             <>
-                {thisProject.description.map((sentence, i) => {
-                    return (
-                        <div
-                            key={i}
-                            className={"flex flex-col ml-4"}
-                        >
-                            <p
-                                className={clsx(
-                                    `${inter.className} text-xl lg:text-2xl p-2 border-2 border-gray-600 bg-gray-200 shadow-section-2d-skeleton-small`,
-                                    {
-                                        'rounded-t-xl': i === 0,
-                                        'mt-3': i > 0,
-                                        'rounded-b-xl': i === project.description.length - 1
-                                    }
-                                )}
-                            >◈ {sentence}</p>
-                        </div>
-                    );
-                })}
+                {/* Desktops */}
+                <div className={"hidden lg:block"}>
+                    {thisProject.description.map((sentence, i) => {
+                        return (
+                            <div
+                                key={i}
+                                className={"flex flex-col ml-4"}
+                            >
+                                <p
+                                    className={clsx(
+                                        `${inter.className} text-2xl p-2 border-2 border-gray-600 bg-gray-200 shadow-section-2d-skeleton-small`,
+                                        {
+                                            'rounded-t-xl': i === 0,
+                                            'mt-3': i > 0,
+                                            'rounded-b-xl': i === project.description.length - 1
+                                        }
+                                    )}
+                                >◈ {sentence}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+
+                {/* Desktops */}
+                <div className={"block lg:hidden"}>
+                    {thisProject.description.map((sentence, i) => {
+                        return (
+                            <div
+                                key={i}
+                                className={"flex flex-col"}
+                            >
+                                <p
+                                    className={clsx(
+                                        `${inter.className} text-md p-2 border-2 border-gray-600 bg-gray-200 shadow-section-2d-skeleton-small`,
+                                        {
+                                            'rounded-t-xl': i === 0,
+                                            'mt-3': i > 0,
+                                            'rounded-b-xl': i === project.description.length - 1
+                                        }
+                                    )}
+                                >◈ {sentence}</p>
+                            </div>
+                        );
+                    })}
+                </div>
             </>
         );
     }
@@ -193,10 +219,12 @@ export default function ProjectCard(project: ProjectData) {
                     </div>
                 </div>
             </div>
+
             {/* Mobile */}
             <div className={"flex lg:hidden flex-col"}>
                 <ProjectImageComponent thisProject={project} />
                 <ProjectsTitleComponent thisProject={project} />
+                <ProjectsDescriptionComponent thisProject={project} />
             </div>
         </>
     );
