@@ -1,0 +1,115 @@
+.carousel ul {
+    list-style: none;
+    display: block;
+}
+
+.carousel button {
+    background-color: #fff;
+    margin: 0 0.25em 0 0.25em;
+    padding: 0.75em 1em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 4px solid;
+    text-decoration: none;
+    box-shadow: inset -4px -4px 0 #ddd;
+}
+
+.carousel button:hover {
+    background-color: #000;
+    box-shadow: inset -4px -4px 0 #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.projects-list ul li {
+    list-style: none;
+    display: block;
+}
+
+.card-title-container {
+    display: flex;
+    margin-bottom: 0.25em;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-title-container h3 {
+    width: 50%;
+}
+
+.card-title-container ul a {
+    display: flex;
+    align-items: center;
+    padding: 0.25em 0.5em;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 4px solid;
+    text-decoration: none;
+    box-shadow: inset -4px -4px 0 #ddd;
+}
+
+.card-title-container ul a:hover {
+    background-color: #000;
+    box-shadow: inset -4px -4px 0 #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.card-title-container ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+
+.card-title-container ul li {
+    margin-right: 0.5rem;
+    display: inline-flex;
+}
+
+.card-title-container a {
+    border-bottom: 2px solid;
+    text-decoration: none;
+}
+
+.card-title-container a:hover {
+    border-width: 4px;
+}
+
+.card-description-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.project-image {
+    --nominal-dimension: 200px;
+    height: var(--nominal-dimension);
+    width: var(--nominal-dimension);
+    border: 4px solid;
+    object-fit: cover;
+    transition: transform .2s;
+}
+
+.project-image:hover {
+    transform:scale(3.5);
+    width: fit-content;
+    object-fit: fill;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.card-container {
+    width: 100%;
+    margin-bottom: 1em;
+    box-shadow: 3px 3px 0 0 #000;
+}
+
+.card-contents {
+    display: flex;
+    flex-direction: column;
+    border: 4px solid;
+    padding: 1em;
+}

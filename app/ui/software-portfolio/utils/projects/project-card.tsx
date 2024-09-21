@@ -2,6 +2,8 @@ import { ProjectData } from "@/app/ui/software-portfolio/utils/projects/projects
 import Image from "next/image"
 import clsx from "clsx"
 import { inter } from "@/app/ui/fonts"
+import styles from "@/app/ui/software-portfolio/utils/projects/projects.module.css"
+
 
 export default function ProjectCard(project: ProjectData) {
 
@@ -41,18 +43,18 @@ export default function ProjectCard(project: ProjectData) {
         const {thisProject} = props;
 
         return (
-            <div className={"flex flex-row p-3"}>
-                <div className={"flex items-start w-full mr-4"}>
+            <div className={"grid grid-cols-3 p-3"}>
+                <div className={"col-span-1"}>
                     <Image
                         src={thisProject.image}
                         width={250}
                         height={250}
-                        className={"border-2 border-black shadow-section-2d-small"}
+                        className={"w-full aspect-square object-cover border-2 border-black shadow-section-2d-small"}
                         alt={`Image of the ${thisProject.name} project.`}
                     />
                 </div>
 
-                <div>
+                <div className={"col-span-2"}>
                     {thisProject.description.map((sentence, i) => {
                         return (
                             <div
