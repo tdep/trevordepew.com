@@ -1,11 +1,15 @@
+'use client';
+
 import { ProjectData } from "@/app/ui/software-portfolio/utils/projects/projects"
 import Image from "next/image"
 import clsx from "clsx"
 import { inter } from "@/app/ui/fonts"
-import styles from "@/app/ui/software-portfolio/utils/projects/projects.module.css"
+import { useState } from "react"
 
 
 export default function ProjectCard(project: ProjectData) {
+    const [enlargedImage, setEnlargedImage] = useState<boolean>(false);
+
 
     type ProjectComponentsProp = {
         thisProject: ProjectData;
@@ -49,8 +53,14 @@ export default function ProjectCard(project: ProjectData) {
                         src={thisProject.image}
                         width={250}
                         height={250}
-                        className={"w-full aspect-square object-cover border-2 border-black shadow-section-2d-small"}
+                        className={clsx(
+                            "w-full border-2 border-black ease-in-out",
+                            {
+                                "aspect-square object-cover shadow-section-2d-small": !enlargedImage,
+                                "translate-x-64 scale-[2.5] z-10": enlargedImage
+                            })}
                         alt={`Image of the ${thisProject.name} project.`}
+                        onClick={() => setEnlargedImage(!enlargedImage)}
                     />
                 </div>
 
