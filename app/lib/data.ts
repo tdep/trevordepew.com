@@ -2,7 +2,7 @@ import { projects } from "@/app/ui/software-portfolio/utils/projects/projects"
 
 const ITEMS_PER_PAGE = 2;
 
-export async function fetchFilteredProjects(
+export  function fetchFilteredProjects(
     query: string,
     currentPage: number,
 ) {
@@ -16,7 +16,7 @@ export async function fetchFilteredProjects(
     }
 }
 
-export async function fetchProjectsPages(query: string) {
+export  function fetchProjectsPages(query: string) {
     try {
         const count = projects.length;
         const totalPages = Math.ceil(Number(count) / ITEMS_PER_PAGE);
