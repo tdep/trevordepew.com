@@ -5,7 +5,7 @@ import EduGrid from "@/app/ui/software-portfolio/utils/about/edu-grid"
 export default function SoftwareAbout() {
     // TODO: Might need to adjust slightly for laptop 1024px but otherwise looks good
     return (
-        <div className={"bg-white-100 m-4 mt-2 lg:m-8"}>
+        <div id={"about"} className={"bg-white-100 m-4 mt-2 lg:m-8"}>
             <div className={"flex flex-col items-start w-full leading-none text-center"}>
                 <p className={"text-7xl"}>Trevor DePew</p>
                 <p className={"text-5xl hidden lg:block"}>Software Engineer</p>

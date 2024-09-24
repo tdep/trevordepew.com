@@ -30,9 +30,10 @@ export default function SWPortfolioSection({
                 </div>
                 <div
                     className={clsx(
-                        "mt-0 h-[89vh] bg-white-100 overflow-y-scroll lg:h-[82vh]",
+                        "mt-0 bg-white-100 overflow-y-scroll",
                         {
-                            'h-[55vh] lg:h-[52vh]': sectionName === 'contact'
+                            'h-[55vh] lg:h-[52vh]': sectionName === 'contact',
+                            "h-[89vh] lg:h-[82vh]": sectionName !== 'contact'
                         }
                     )}>
                     <SectionContent.type />

@@ -22,7 +22,7 @@ export default function Page() {
               </p>
               <ol>
                   <Link
-                      href={"/software-portfolio"}
+                      href={"/portfolio"}
                       // href={"https://www.trevordepew.com/portfolio"}
                       // target={"_blank"}
                       className={"mt-1 mb-1 flex items-center gap-5 self-start rounded-lg bg-amethyst-500 hover:bg-amethyst-400 px-6 py-3 text-xl font-medium text-white-100"}>
