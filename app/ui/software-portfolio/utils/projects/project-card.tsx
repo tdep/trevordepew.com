@@ -30,7 +30,7 @@ export default function ProjectCard(project: ProjectData) {
                             return (
                                 <div
                                     key={i}
-                                    className={"flex mx-2 justify-center border-2 border-black shadow-button-inner lg:text-nowrap items-center hover:bg-emerald-500 hover:cursor-pointer"}
+                                    className={"flex mx-2 justify-center border-2 border-black shadow-button-inner lg:text-nowrap items-center hover:bg-emerald-300 hover:cursor-pointer"}
                                 >
                                     <a
                                         href={link.address}

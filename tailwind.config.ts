@@ -18,7 +18,8 @@ const config: Config = {
         "section-2d-small": "6px 6px rgba(0, 0, 0, 1)",
         "section-2d-skeleton": "12px 12px 0 0 rgba(236, 246, 247, 1)",
         "section-2d-skeleton-small": "6px 6px rgba(146, 146, 147, 1)",
-        "button-inner": "inset -2px -2px 0 0 rgba(150, 150, 150, 1), inset 2px 2px 0 0 rgba(256, 256, 256, 1)"
+        "button-inner": "inset -2px -2px 0 0 rgba(150, 150, 150, 1), inset 2px 2px 0 0 rgba(256, 256, 256, 1)",
+        "button-inner-big": "inset -4px -4px 0 0 rgba(150, 150, 150, 1), inset 4px 4px 0 0 rgba(256, 256, 256, 1)"
       },
     },
     colors: {
