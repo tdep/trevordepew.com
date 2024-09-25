@@ -21,13 +21,13 @@ export default function Page() {
     const ConstructionModal = () => {
         return (
             <div className={clsx(
-                "flex flex-row w-full items-start m-3 bg-gray-100 border-2 border-black",
+                "flex grow flex-row max-w-[42em] items-center m-3 bg-gray-100 border-2 border-black",
                 {
                     "hidden": !modalOpen
                 }
             )}>
-                <ExclamationTriangleIcon className={"inline float-end w-12"} />
-                <p className={`${orbitron.className} text-sm lg:text-lg text-justify w-full mx-1 p-1 leading-none`}>
+                <ExclamationTriangleIcon className={"w-40 lg:w-24"} />
+                <p className={`${orbitron.className} inline text-sm lg:text-lg mx-1 p-1 leading-none`}>
                     Come back soon!
                     The <span className={"text-emerald-600"}>TadLab</span> is under construction!
                     When it&apos;s up and running, it&apos;ll have all sorts of neat gizmos and whatsits!
@@ -84,7 +84,7 @@ export default function Page() {
                           );
                       })}
                   </div>
-                  <div className={clsx(`${styles.construction} flex items-center h-24 border-2 border-black rounded-lg`,
+                  <div className={clsx(`${styles.construction} flex flex-initial items-center justify-center h-24 lg:h-32 border-2 border-black rounded-lg`,
                       {
                           "hidden" : !modalOpen
                       }
