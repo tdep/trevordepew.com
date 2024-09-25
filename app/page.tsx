@@ -1,69 +1,65 @@
 import Link from "next/link";
 import TadLogo from "@/app/ui/tad-logo";
-import {sansita, orbitron} from '@/app/ui/fonts'
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
-import Image from 'next/image';
-import { heroImagePicker } from "@/app/lib/utils";
-import { Suspense } from "react";
-import { LandingSkeleton } from "@/app/ui/skeletons";
+import { sansita, orbitron, rum } from "@/app/ui/fonts"
+import { ArrowRightIcon, CodeBracketIcon, MusicalNoteIcon, PaintBrushIcon, BeakerIcon} from "@heroicons/react/24/outline"
+import clsx from "clsx"
+import TADIcon from "@/app/lib/TADIcon"
 
 export default function Page() {
-    // const heroImage = heroImagePicker();
+    const links = [
+        { name: 'Software Portfolio', href: '/portfolio', icon: CodeBracketIcon, target: ""},
+        { name: 'Composition Portfolio', href: 'https://tadepewmusic.com/', icon: MusicalNoteIcon, target: "_blank" },
+        { name: 'Craft Portfolio', href: 'https://tdepewmusic.wixsite.com/tdepewmusic', icon: PaintBrushIcon, target: "_blank" },
+        { name: 'TadLab', href: '/', icon: BeakerIcon, target: ""}
+    ];
 
   return (
       <main className={"flex min-h-screen flex-col p-6"}>
-          <div className={"flex h-20 shrink-0 items-end rounded-lg bg-belize-500 p-4 md:h-52"}>
-              <TadLogo text={"144"} width={200} height={200}/>
+          <div className={"mt-4 flex grow flex-col gap-4 justify-center items-center"}>
+              <div className={"flex grow flex-col gap-6 rounded-lg bg-gray-100 px-6 py-10 border-2 border-black shadow-section-2d"}>
+                  <div className={"flex h-56 items-end rounded-lg bg-belize-300 "}>
+                      <div className={"flex flex-row items-end rounded-lg h-full px-4 lg:px-0 lg:pr-4 border-2 border-black"}>
+                          <div className={"hidden lg:inline pb-2"}>
+                              <TADIcon width={120} height={120} />
+                          </div>
+                          <div className={"flex items-center lg:items-end h-full"}>
+                              <p className={`${rum.className} text-white-100 text-center text-8xl lg:text-9xl`}>Trevor DePew</p>
+                          </div>
+                      </div>
+                  </div>
+                  <p className={` ${sansita.className} text-xl text-black lg:text-3xl lg:leading-normal text-center`}>
+                      <strong className={"text-2xl lg:text-4xl"}>Welcome to my website.</strong><br /> This is the home
+                      for all of my work, have a look around!
+                  </p>
+                  <div className={"flex flex-col items-center gap-2"}>
+                      {links.map((link, i) => {
+                          const LinkIcon = link.icon;
+                          return (
+                              <Link
+                                  key={i}
+                                  href={link.href}
+                                  target={link.target}
+                                  className={clsx("flex justify-center items-center w-full border-2 border-black gap-5 px-6 py-3 text-2xl font-medium shadow-button-inner lg:shadow-button-inner-big",
+                                      {
+                                          "rounded-t-lg": i === 0,
+                                          "rounded-b-lg": i === links.length - 1,
+                                          "bg-pomegranate-300 lg:hover:bg-pomegranate-400": link.name === "Software Portfolio",
+                                          "bg-orange-300 lg:hover:bg-orange-400": link.name === "Composition Portfolio",
+                                          "bg-yellow-300 lg:hover:bg-yellow-400": link.name === "Craft Portfolio",
+                                          "bg-emerald-300 lg:hover:bg-emerald-400": link.name === "TadLab"
+
+                                      }
+                                  )}
+                              >
+                                  <span>{link.name}</span>
+                                  <LinkIcon className={"w-6"} />
+                              </Link>
+                          );
+                      })}
+                  </div>
+              </div>
+
           </div>
-          <div className={"mt-4 flex grow flex-col gap-4 md:flex-row"}>
-          <div className={"flex flex-col justify-center gap-6 rounded-lg bg-gray-100 px-6 py-10 md:w-2/5 md:px-20"}>
-              <p className={` ${sansita.className} text-xl text-black md:text-3xl md:leading-normal`}>
-                  <strong>Welcome to my website.</strong> This is the home for all of my work, have a look around!
-              </p>
-              <ol>
-                  <Link
-                      href={"/portfolio"}
-                      // href={"https://www.trevordepew.com/portfolio"}
-                      // target={"_blank"}
-                      className={"mt-1 mb-1 flex items-center gap-5 self-start rounded-lg bg-amethyst-500 hover:bg-amethyst-400 px-6 py-3 text-xl font-medium text-white-100"}>
-                      <span className={`${orbitron.className}`}>Software Engineering Portfolio</span> <ArrowRightIcon className={"w-5 md:w-6"} />
-                  </Link>
-                  <Link
-                      // href={"/composer-portfolio"}
-                      href={"https://tadepewmusic.com"}
-                      target={"_blank"}
-                      className={"mt-1 mb-1 flex items-center gap-5 self-start rounded-lg bg-belize-500 hover:bg-belize-400 px-6 py-3 text-xl font-medium text-white-100"}>
-                      <span className={`${orbitron.className}`}>Composer Portfolio</span> <ArrowRightIcon className={"w-5 md:w-6"} />
-                  </Link>
-                  <Link
-                      // href={"/woodworker-portfolio"}
-                      href={"https://tdepewmusic.wixsite.com/tdepewmusic"}
-                      target={"_blank"}
-                      className={"mt-1 mb-1 flex items-center gap-5 self-start rounded-lg bg-seagreen-500 hover:bg-seagreen-400 px-6 py-3 text-xl font-medium text-white-100"}>
-                      <span className={`${orbitron.className}`}>Woodworking Portfolio</span> <ArrowRightIcon className={"w-5 md:w-6"} />
-                  </Link>
-              </ol>
-          </div>
-          {/*<div className={"flex items-center justify-center p-6 md: w-3/5 md:px-28 md:py-12"}>*/}
-          {/*  /!* Add Hero Images / Slideshow here! *!/*/}
-          {/*    <Suspense fallback={<LandingSkeleton />}>*/}
-          {/*        <Image*/}
-          {/*            src={heroImage.src}*/}
-          {/*            width={heroImage.width}*/}
-          {/*            height={heroImage.height}*/}
-          {/*            className={"hidden md:block"}*/}
-          {/*            alt={heroImage.alt}*/}
-          {/*        />*/}
-          {/*        <Image*/}
-          {/*            src={heroImage.src}*/}
-          {/*            width={heroImage.width}*/}
-          {/*            height={heroImage.height}*/}
-          {/*            className={"block md:hidden"}*/}
-          {/*            alt={heroImage.alt}*/}
-          {/*        />*/}
-          {/*    </Suspense>*/}
-          {/*</div>*/}
-        </div>
       </main>
   );
 }
