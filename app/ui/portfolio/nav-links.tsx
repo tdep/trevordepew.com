@@ -18,8 +18,8 @@ import { useEffect, useState } from "react"
 // A Map of Links to display in the side navigation.
 const links = [
     { name: 'Home', href: '/', icon: HomeIcon },
-    { name: 'Composition Portfolio', href: '/composition-portfolio', icon: MusicalNoteIcon },
-    { name: 'Craft Portfolio', href: '/craft-portfolio', icon: PaintBrushIcon },
+    { name: 'Composition Portfolio', href: 'https://tadepewmusic.com/', icon: MusicalNoteIcon },
+    { name: 'Craft Portfolio', href: 'https://tdepewmusic.wixsite.com/tdepewmusic', icon: PaintBrushIcon },
     { name: 'Software Portfolio', href: '/portfolio', icon: CodeBracketIcon}
 ];
 
@@ -35,6 +35,7 @@ export default function NavLinks() {
                         <Link
                             key={link.name}
                             href={link.href}
+                            target={link.name === "Home"? "": "_blank"}
                             className={clsx(
                                 "flex h-[48px] grow items-center justify-center gap-2 p-3 text-xl font-medium ml-1 lg:mx-0 lg:bg-white-100 lg:flex-none lg:justify-start lg:p-2 lg:px-3 shadow-button-inner lg:shadow-button-inner-big border-2 border-black",
                                 {
