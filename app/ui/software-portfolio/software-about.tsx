@@ -41,7 +41,7 @@ export default function SoftwareAbout() {
                     <p className={"text-lg text-justify mb-1 lg:mb-3 lg:text-xl lg:w-3/5"}>
                         I am a <strong>Software Engineer</strong> interested in how things work. From adding machines and
                         steam engines to languages and the theory of western classical music, and everywhere in-between.
-                        I constantly seek to understand how the natural and synthetic world work.
+                        I constantly seek to understand how the natural and synthetic worlds work.
                     </p>
                     <p className={"text-lg text-justify mb-1 lg:mb-3 lg:text-xl lg:w-3/5"}>
                         Currently, I am earning my <strong>Master&apos;s in Computer Science</strong> from CUNY Brooklyn
