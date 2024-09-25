@@ -39,22 +39,24 @@ export default function SoftwareAbout() {
                         </div>
                     </div>
                     <p className={"text-lg text-justify mb-1 lg:mb-3 lg:text-xl lg:w-3/5"}>
-                        I am a <strong>Full Stack Software Engineer</strong> with a passion for solving problems
-                        about human behavior and its relationship with the natural and urban environments from
-                        infrastructure to climate and points between.
+                        I am a <strong>Software Engineer</strong> interested in how things work. From adding machines and
+                        steam engines to languages and the theory of western classical music, and everywhere in-between.
+                        I constantly seek to understand how the natural and synthetic world work.
                     </p>
                     <p className={"text-lg text-justify mb-1 lg:mb-3 lg:text-xl lg:w-3/5"}>
-                        I have a core belief that truth and honesty with ourselves and each other is the best way to
-                        create an environment filled with meaningful and productive relationships.
+                        Currently, I am earning my <strong>Master&apos;s in Computer Science</strong> from CUNY Brooklyn
+                        College where I am studying computer architecture, database system design and management, and more.
+                        I hope to blend my study in CS with my previous Master&apos;s in Music Composition as I continue
+                        working through my degree.
                     </p>
                     <p className={"text-lg text-justify mb-1 lg:mb-3 lg:text-xl lg:w-3/5"}>
-                        Apart from my academic pursuits in classical composition and performance, I have worked as a
-                        technical support agent, piano technician, theater technician, and farmer.
+                        Outside of computer programming and music composition, I have worked as a technical support agent,
+                        piano technician, theater technician, photographer, carpenter, teacher, performer, and farmer.
                     </p>
                     <p className={"text-lg text-justify mb-1 lg:mb-3 lg:text-xl lg:w-3/5"}>
-                        My previous career pursuits have led me through a healthy number of varied experiences which
-                        have in turn given me a well-rounded set of skills that I use to broaden my perspective as a
-                        software engineer.
+                        I believe that truth and honesty within ourselves and without is the best way to
+                        create an environment filled with meaningful and productive relationships. Be sure to check out
+                        my software projects and other works found by following the links throughout!
                     </p>
                 </div>
             </div>
