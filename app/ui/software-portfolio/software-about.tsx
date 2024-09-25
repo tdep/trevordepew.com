@@ -27,7 +27,7 @@ export default function SoftwareAbout() {
                         src={"/profile_trevor.png"}
                         width={250}
                         height={250}
-                        className={"hidden md:inline float-end ml-4 mb-4 border-2 border-black shadow-section-2d-small md:w-96"}
+                        className={"hidden lg:inline float-end ml-4 mb-4 border-2 border-black shadow-section-2d-small md:w-96"}
                         alt={"Portrait of Trevor DePew, Software Engineer"}
                     />
                     <div className={"flex lg:hidden flex-col border-2 border-black shadow-section-2d-small mb-4"}>

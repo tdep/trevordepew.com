@@ -6,6 +6,7 @@ import { CodeBracketIcon, MusicalNoteIcon, PaintBrushIcon, BeakerIcon, Exclamati
 import clsx from "clsx"
 import TADIcon from "@/app/lib/TADIcon"
 import { useState } from "react"
+import styles from '@/app/ui/portfolio/landing.module.css'
 
 export default function Page() {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
@@ -20,19 +21,17 @@ export default function Page() {
     const ConstructionModal = () => {
         return (
             <div className={clsx(
-                "w-1/2 border-2 border-black",
+                "flex flex-row w-full items-start m-3 bg-gray-100 border-2 border-black",
                 {
                     "hidden": !modalOpen
                 }
             )}>
-                <div className={""}>
-                    <ExclamationTriangleIcon className={"w-24"} />
-                    <p className={`${orbitron.className}`}>
-                        Come back soon!
-                        The <span className={"text-emerald-500"}>TadLab</span> is under construction!
-                        When it&apos;s up and running, it&apos;ll have all sorts of neat gizmos and whatsits!
-                    </p>
-                </div>
+                <ExclamationTriangleIcon className={"inline float-end w-12"} />
+                <p className={`${orbitron.className} text-sm lg:text-lg text-justify w-full mx-1 p-1 leading-none`}>
+                    Come back soon!
+                    The <span className={"text-emerald-600"}>TadLab</span> is under construction!
+                    When it&apos;s up and running, it&apos;ll have all sorts of neat gizmos and whatsits!
+                </p>
             </div>
         );
     }
@@ -52,7 +51,7 @@ export default function Page() {
                           </div>
                       </div>
                   </div>
-                  <p className={` ${sansita.className} text-xl text-black lg:text-3xl lg:leading-normal text-center`}>
+                  <p className={`${sansita.className} text-xl text-black lg:text-3xl lg:leading-normal text-center`}>
                       <strong className={"text-2xl lg:text-4xl"}>Welcome to my website.</strong><br /> This is the home
                       for all of my work, have a look around!
                   </p>
@@ -85,7 +84,11 @@ export default function Page() {
                           );
                       })}
                   </div>
-                  <div className={"flex items-center h-24 border-2 border-black"}>
+                  <div className={clsx(`${styles.construction} flex items-center h-24 border-2 border-black rounded-lg`,
+                      {
+                          "hidden" : !modalOpen
+                      }
+                      )}>
                       <ConstructionModal />
                   </div>
               </div>

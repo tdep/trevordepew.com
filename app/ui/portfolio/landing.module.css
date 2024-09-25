@@ -1,0 +1,13 @@
+.construction {
+    background: linear-gradient(
+            -45deg,
+            #979a9a,
+            #979a9a 25%,
+            #f7dc6f 25%,
+            #f7dc6f 50%,
+            #979a9a 50%,
+            #979a9a 75%,
+            #f7dc6f 75%,
+            #f7dc6f 100%
+    );
+}
