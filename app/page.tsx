@@ -1,11 +1,14 @@
+'use client';
+
 import Link from "next/link";
-import TadLogo from "@/app/ui/tad-logo";
 import { sansita, orbitron, rum } from "@/app/ui/fonts"
-import { ArrowRightIcon, CodeBracketIcon, MusicalNoteIcon, PaintBrushIcon, BeakerIcon} from "@heroicons/react/24/outline"
+import { CodeBracketIcon, MusicalNoteIcon, PaintBrushIcon, BeakerIcon, ExclamationTriangleIcon} from "@heroicons/react/24/outline"
 import clsx from "clsx"
 import TADIcon from "@/app/lib/TADIcon"
+import { useState } from "react"
 
 export default function Page() {
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
     const links = [
         { name: 'Software Portfolio', href: '/portfolio', icon: CodeBracketIcon, target: ""},
         { name: 'Composition Portfolio', href: 'https://tadepewmusic.com/', icon: MusicalNoteIcon, target: "_blank" },
@@ -13,13 +16,35 @@ export default function Page() {
         { name: 'TadLab', href: '/', icon: BeakerIcon, target: ""}
     ];
 
-  return (
+
+    const ConstructionModal = () => {
+        return (
+            <div className={clsx(
+                "w-1/2 border-2 border-black",
+                {
+                    "hidden": !modalOpen
+                }
+            )}>
+                <div className={""}>
+                    <ExclamationTriangleIcon className={"w-24"} />
+                    <p className={`${orbitron.className}`}>
+                        Come back soon!
+                        The <span className={"text-emerald-500"}>TadLab</span> is under construction!
+                        When it&apos;s up and running, it&apos;ll have all sorts of neat gizmos and whatsits!
+                    </p>
+                </div>
+            </div>
+        );
+    }
+
+
+    return (
       <main className={"flex min-h-screen flex-col p-6"}>
-          <div className={"mt-4 flex grow flex-col gap-4 justify-center items-center"}>
-              <div className={"flex grow flex-col gap-6 rounded-lg bg-gray-100 px-6 py-10 border-2 border-black shadow-section-2d"}>
-                  <div className={"flex h-56 items-end rounded-lg bg-belize-300 "}>
-                      <div className={"flex flex-row items-end rounded-lg h-full px-4 lg:px-0 lg:pr-4 border-2 border-black"}>
-                          <div className={"hidden lg:inline pb-2"}>
+          <div className={"mt-4 flex flex-col gap-4 justify-center items-center"}>
+              <div className={"flex flex-col gap-6 rounded-lg bg-gray-100 px-6 py-10 border-2 border-black shadow-section-2d"}>
+                  <div className={"flex h-56 items-end rounded-lg bg-belize-300 border-2 border-black"}>
+                      <div className={"flex flex-row items-end rounded-lg h-full px-4 lg:px-0 lg:pr-4"}>
+                          <div className={"hidden lg:flex pb-2"}>
                               <TADIcon width={120} height={120} />
                           </div>
                           <div className={"flex items-center lg:items-end h-full"}>
@@ -35,31 +60,36 @@ export default function Page() {
                       {links.map((link, i) => {
                           const LinkIcon = link.icon;
                           return (
-                              <Link
-                                  key={i}
-                                  href={link.href}
-                                  target={link.target}
-                                  className={clsx("flex justify-center items-center w-full border-2 border-black gap-5 px-6 py-3 text-2xl font-medium shadow-button-inner lg:shadow-button-inner-big",
-                                      {
-                                          "rounded-t-lg": i === 0,
-                                          "rounded-b-lg": i === links.length - 1,
-                                          "bg-pomegranate-300 lg:hover:bg-pomegranate-400": link.name === "Software Portfolio",
-                                          "bg-orange-300 lg:hover:bg-orange-400": link.name === "Composition Portfolio",
-                                          "bg-yellow-300 lg:hover:bg-yellow-400": link.name === "Craft Portfolio",
-                                          "bg-emerald-300 lg:hover:bg-emerald-400": link.name === "TadLab"
-
-                                      }
-                                  )}
-                              >
-                                  <span>{link.name}</span>
-                                  <LinkIcon className={"w-6"} />
-                              </Link>
+                              <div
+                                  className={"w-full"}
+                                  key={i}>
+                                  <Link
+                                      href={link.href}
+                                      target={link.target}
+                                      onClick={() => {if(link.name === "TadLab") setModalOpen(!modalOpen)}}
+                                      className={clsx("flex justify-center items-center border-2 border-black gap-5 px-6 py-3 text-2xl font-medium shadow-button-inner lg:shadow-button-inner-big",
+                                          {
+                                              "rounded-t-lg": i === 0,
+                                              "rounded-b-lg mb-4": i === links.length - 1,
+                                              "bg-pomegranate-300 lg:hover:bg-pomegranate-400": link.name === "Software Portfolio",
+                                              "bg-orange-300 lg:hover:bg-orange-400": link.name === "Composition Portfolio",
+                                              "bg-yellow-300 lg:hover:bg-yellow-400": link.name === "Craft Portfolio",
+                                              "bg-emerald-300 lg:hover:bg-emerald-400": link.name === "TadLab"
+                                          }
+                                      )}
+                                  >
+                                      <span>{link.name}</span>
+                                      <LinkIcon className={"w-6"} />
+                                  </Link>
+                              </div>
                           );
                       })}
                   </div>
+                  <div className={"flex items-center h-24 border-2 border-black"}>
+                      <ConstructionModal />
+                  </div>
               </div>
-
           </div>
       </main>
-  );
+    );
 }

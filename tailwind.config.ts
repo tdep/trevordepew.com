@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gradientColorStopPositions: {
+        25: '25%',
+        50: '50%',
+        75: '75%',
+        100: '100%'
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
