@@ -1,6 +1,4 @@
 import NavLinks, { HomeLogoNav, ScrollToTop } from "@/app/ui/portfolio/nav-links"
-import { BackwardIcon } from "@heroicons/react/24/outline";
-import { goBack } from '@/app/lib/actions'
 
 export default function SideNav() {
 

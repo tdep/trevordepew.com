@@ -11,7 +11,6 @@ import Link from 'next/link';
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import TADIcon from "@/app/lib/TADIcon";
-import { useEffect, useState } from "react"
 
 // TODO: Refactor Software Portfolio pathname to 'software-portfolio' (after current round of applications)
 
