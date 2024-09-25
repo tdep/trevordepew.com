@@ -24,6 +24,7 @@ const links = [
 ];
 
 export default function NavLinks() {
+    const lastLinkElement: number = 2; // if the number of links in the side nav changes, this will have to too (not all links are used for each page i.e. no swe link if on swe portfolio)
     const pathname = usePathname();
     return (
         <>
@@ -35,16 +36,16 @@ export default function NavLinks() {
                             key={link.name}
                             href={link.href}
                             className={clsx(
-                                "flex h-[48px] grow items-center justify-center gap-2 p-3 text-xl font-medium bg-white-100 lg:flex-none lg:justify-start lg:p-2 lg:px-3 shadow-button-inner lg:shadow-button-inner-big border-2 border-black",
+                                "flex h-[48px] grow items-center justify-center gap-2 p-3 text-xl font-medium ml-1 lg:mx-0 lg:bg-white-100 lg:flex-none lg:justify-start lg:p-2 lg:px-3 shadow-button-inner lg:shadow-button-inner-big border-2 border-black",
                                 {
-                                    "rounded-t-lg": i === 0,
-                                    "rounded-b-lg": i === 2, // if the number of links in the side nav changes, this will have to too (not all links are used for each page i.e. no swe link if on swe portfolio)
-                                    "lg:hover:bg-amethyst-300 lg:hover:text-white-100": pathname === '/portfolio'
+                                    "rounded-l-lg lg:rounded-t-lg ml-2 lg:ml-0": i === 0,
+                                    "rounded-r-lg lg:rounded-b-lg mr-2 lg:mr-0": i === lastLinkElement,
+                                    "bg-amethyst-300 lg:hover:bg-amethyst-300 lg:hover:text-white-100": pathname === '/portfolio'
                                 }
                             )}
                         >
                             <LinkIcon className={"w-6"}/>
-                            <p className={"hidden md:block"}>{link.name}</p>
+                            <p className={"hidden lg:block"}>{link.name}</p>
                         </Link>
                     );
                 }
@@ -76,8 +77,6 @@ export function HomeLogoNav() {
 export function ScrollToTop() {
     const pathname = usePathname();
 
-
-
     function scrollToTop() {
         const el = document.getElementById("software-top")
         el?.scrollIntoView({behavior:"smooth"})
@@ -86,14 +85,15 @@ export function ScrollToTop() {
     return (
         <button
             className={clsx(
-                "flex h-[48px] grow items-center justify-center w-full p-3 text-xl font-medium bg-white-100 rounded-lg lg:flex-none lg:justify-start lg:p-2 lg:px-3 shadow-button-inner lg:shadow-button-inner-big border-2 border-black",
+                "flex h-[48px] lg:grow items-center justify-center lg:w-full p-3 mr-2 text-xl font-medium lg:mr-0 lg:bg-white-100 rounded-lg lg:flex-none lg:justify-start lg:p-2 lg:px-3 shadow-button-inner lg:shadow-button-inner-big border-2 border-black",
                 {
-                    "lg:hover:bg-amethyst-300 lg:hover:text-white-100": pathname === '/portfolio'
+                    "bg-amethyst-300 lg:hover:bg-amethyst-300 lg:hover:text-white-100": pathname === '/portfolio'
                 }
             )}
             onClick={scrollToTop}
         >
-            <ArrowUpIcon className={"w-6"}/> Back to Top
+            <ArrowUpIcon className={"w-6"}/>
+            <p className={"hidden lg:block"}>Back to Top</p>
         </button>
     )
 }
