@@ -1,4 +1,7 @@
 # trevordepew.com
+
+[See it live here!](https://www.trevordepew.com)
+
 ## Description
 This is the 4th iteration of my personal website and hopefully the most comprehensive. The 3 previous versions can be found here:
 - [`Version 3 Client`](https://github.com/tdep/tdep-tadlab-client)
