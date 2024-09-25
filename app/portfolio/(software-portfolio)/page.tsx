@@ -7,6 +7,12 @@ import SoftwareExperience from "@/app/ui/software-portfolio/software-experience"
 import SoftwareProjects from "@/app/ui/software-portfolio/software-projects"
 import SoftwareContact from "@/app/ui/software-portfolio/software-contact"
 import SoftwareFooter from "@/app/ui/software-portfolio/software-footer"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: 'Software Portfolio',
+    description: 'Trevor DePew Software Engineering Portfolio'
+};
 
 export default function Page() {
     // TODO: Refactor route to be 'software-portfolio' (after current round of applications)
