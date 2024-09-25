@@ -8,7 +8,7 @@ import { Suspense } from "react";
 import { LandingSkeleton } from "@/app/ui/skeletons";
 
 export default function Page() {
-    const heroImage = heroImagePicker();
+    // const heroImage = heroImagePicker();
 
   return (
       <main className={"flex min-h-screen flex-col p-6"}>
@@ -44,25 +44,25 @@ export default function Page() {
                   </Link>
               </ol>
           </div>
-          <div className={"flex items-center justify-center p-6 md: w-3/5 md:px-28 md:py-12"}>
-            {/* Add Hero Images / Slideshow here! */}
-              <Suspense fallback={<LandingSkeleton />}>
-                  <Image
-                      src={heroImage.src}
-                      width={heroImage.width}
-                      height={heroImage.height}
-                      className={"hidden md:block"}
-                      alt={heroImage.alt}
-                  />
-                  <Image
-                      src={heroImage.src}
-                      width={heroImage.width}
-                      height={heroImage.height}
-                      className={"block md:hidden"}
-                      alt={heroImage.alt}
-                  />
-              </Suspense>
-          </div>
+          {/*<div className={"flex items-center justify-center p-6 md: w-3/5 md:px-28 md:py-12"}>*/}
+          {/*  /!* Add Hero Images / Slideshow here! *!/*/}
+          {/*    <Suspense fallback={<LandingSkeleton />}>*/}
+          {/*        <Image*/}
+          {/*            src={heroImage.src}*/}
+          {/*            width={heroImage.width}*/}
+          {/*            height={heroImage.height}*/}
+          {/*            className={"hidden md:block"}*/}
+          {/*            alt={heroImage.alt}*/}
+          {/*        />*/}
+          {/*        <Image*/}
+          {/*            src={heroImage.src}*/}
+          {/*            width={heroImage.width}*/}
+          {/*            height={heroImage.height}*/}
+          {/*            className={"block md:hidden"}*/}
+          {/*            alt={heroImage.alt}*/}
+          {/*        />*/}
+          {/*    </Suspense>*/}
+          {/*</div>*/}
         </div>
       </main>
   );
